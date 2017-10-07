@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * The LabClass class represents an enrolment list for one lab class. It stores
- * the time, room and participants of the lab, as well as the instructor's name.
+ * the timeOfCollision, room and participants of the lab, as well as the instructor's name.
  * 
  * @author Michael Kölling and David Barnes
  * @version 2011.07.31
@@ -60,8 +60,8 @@ public class LabClass
     }
     
     /**
-     * Set the time for this LabClass. The parameter should define the day
-     * and the time of day, such as "Friday, 10am".
+     * Set the timeOfCollision for this LabClass. The parameter should define the day
+     * and the timeOfCollision of day, such as "Friday, 10am".
      */
     public void setTime(String timeAndDayString)
     {

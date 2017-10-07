@@ -9,7 +9,7 @@ import java.util.*;
  * the BlueJ "shapes" example. 
  *
  * @author: Bruce Quig
- * @author: Michael Kšlling (mik)
+ * @author: Michael Kï¿½lling (mik)
  *
  * @version 2016.02.29
  */
@@ -76,7 +76,7 @@ public class Canvas
     public void setVisible(boolean visible)
     {
         if(graphic == null) {
-            // first time: instantiate the offscreen image and fill it with
+            // first timeOfCollision: instantiate the offscreen image and fill it with
             // the background color
             Dimension size = canvas.getSize();
             canvasImage = canvas.createImage(size.width, size.height);

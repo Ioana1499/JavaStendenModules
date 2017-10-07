@@ -1,12 +1,12 @@
-# Assignment Index 
-Assignments for this week:
- - 6.1 t/m 6.7
- - 6.8
- - 6.9 t/m 6.14
- - 6.16 t/m 6.18
- - 6.20 t/m 6.21
- - 6.22 t/m 6.25
- - 6.28 t/m 6.33
+# Assignments Chapter 6
+###Required assignments for this week: :heavy_exclamation_mark:
+ - Exercises 6.1 t/m 6.7 :white_check_mark:
+ - Exercises 6.8 :white_check_mark:
+ - Exercises 6.9 t/m 6.14 :white_check_mark:
+ - Exercises 6.16 t/m 6.18 :white_check_mark:
+ - Exercises 6.20 t/m 6.21 :white_check_mark:
+ - Exercises 6.22 t/m 6.25 :white_check_mark:
+ - Exercises 6.28 t/m 6.33 :white_check_mark:
 
 # Assignment solutions
  - **Exercise 6.1 Open the project zuul-bad. (This project is called “bad” because its implemen-

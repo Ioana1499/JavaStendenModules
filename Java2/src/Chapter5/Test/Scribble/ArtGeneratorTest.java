@@ -78,7 +78,7 @@ public class ArtGeneratorTest extends TimerTask
                 drawSpiral( artGenerator, programCounter );
                 break;
             case 100:
-                //artGenerator.drawWheel(200, 200, ArtGenerator.Polygons.QUADRILATERAL, Color.green);
+                //artGenerator.drawWheel(200, 200, ArtGenerator.Polygons.QUADRILATERAL, ColorUtil.green);
                 artGenerator.drawWheel( 200, ArtGenerator.Polygons.HEPTAGON, Color.red, 36, 10 );
                 break;
 
@@ -101,7 +101,7 @@ public class ArtGeneratorTest extends TimerTask
 
     public static void main( String[] args )
     {
-        Timer timer = new Timer( "Space time" );
+        Timer timer = new Timer( "Space timeOfCollision" );
         timer.schedule( new ArtGeneratorTest(), 0, REFRESH_INTERVAL );
     }
 }

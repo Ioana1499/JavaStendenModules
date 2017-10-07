@@ -1,8 +1,8 @@
-#Assignments Index
-Assignments for this week:
- - 8.1 to 8.19
+# Assignments Chapter 8 
+###Required assignments for this week: :heavy_exclamation_mark:
+ - Exercises8.1 to 8.19 :white_check_mark:
  
-# Assignment Solutions
+# Exercise Assignment Solutions
  - **Exercise 8.1 Open the project network-v1. It contains the classes exactly as we have discussed them here. Create 
     some MessagePost objects and some PhotoPost objects. Create a NewsFeed object. Enter the posts into the news feed, 
     and then display the feed’s contents.**

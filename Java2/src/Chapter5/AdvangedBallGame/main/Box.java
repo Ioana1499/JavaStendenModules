@@ -1,4 +1,6 @@
-package MyGame;
+package AdvangedBallGame.main;
+
+import BallGame.Util.ScreenUtil;
 
 import java.awt.*;
 
@@ -7,7 +9,7 @@ import java.awt.*;
  */
 public class Box
 {
-    int minX;
+    public int minX;
     int maxX;
     int minY;
     int maxY;
@@ -38,6 +40,33 @@ public class Box
     }
 
     /**
+     * Constructor with less arguments.
+     * @param position
+     * @param boxDimensions
+     */
+    public Box( Point position, Dimension boxDimensions )
+    {
+        this( position.x, position.y, boxDimensions.width, boxDimensions.height );
+    }
+
+    /**
+     * Constructor with less arguments.
+     * @param boxDimensions
+     */
+    public Box( Dimension boxDimensions )
+    {
+        this( 0, 0, boxDimensions.width, boxDimensions.height );
+    }
+
+    /**
+     * Constructor with no arguments.
+     */
+    public Box()
+    {
+        this( ScreenUtil.getDisplayDimensions() );
+    }
+
+    /**
      * Set or reset the boundaries of the box.
      */
     public void set( int x, int y, int width, int height )
@@ -48,6 +77,14 @@ public class Box
         maxY = y + height - 1;
     }
 
+    public void set( Point position, Dimension dimension )
+    {
+        minX = position.x;
+        minY = position.y;
+        maxX = minX + dimension.width -1;
+        maxY = minY + dimension.height -1;
+    }
+
     /**
      * Draw itself using the given graphic context.
      */
@@ -55,7 +92,7 @@ public class Box
     {
         g.setColor( colorFilled );
         g.fillRect( minX, minY, maxX - minX - 1, maxY - minY - 1 );
-        g.setColor( colorBorder );
-        g.drawRect( minX, minY, maxX - minX - 1, maxY - minY - 1 );
+        //g.setColor( colorBorder );
+        //g.drawRect( minX, minY, maxX - minX - 1, maxY - minY - 1 );
     }
 }

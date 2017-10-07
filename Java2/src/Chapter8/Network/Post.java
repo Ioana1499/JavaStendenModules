@@ -62,9 +62,9 @@ public abstract class Post
     }
 
     /**
-     * Return the time of creation of this post.
+     * Return the timeOfCollision of creation of this post.
      *
-     * @return The post's creation time, as a system time value.
+     * @return The post's creation timeOfCollision, as a system timeOfCollision value.
      */
     public long getTimeStamp()
     {
@@ -84,17 +84,17 @@ public abstract class Post
     public abstract void printShortSummary();
 
     /**
-     * Create a string describing a time point in the past in terms
-     * relative to current time, such as "30 seconds ago" or "7 minutes ago".
+     * Create a string describing a timeOfCollision point in the past in terms
+     * relative to current timeOfCollision, such as "30 seconds ago" or "7 minutes ago".
      * Currently, only seconds and minutes are used for the string.
      *
-     * @param time The time value to convert (in system milliseconds)
-     * @return A relative time string for the given time
+     * @param time The timeOfCollision value to convert (in system milliseconds)
+     * @return A relative timeOfCollision string for the given timeOfCollision
      */
     protected String timeString( long time )
     {
         long current = System.currentTimeMillis();
-        long pastMillis = current - time;      // time passed in milliseconds
+        long pastMillis = current - time;      // timeOfCollision passed in milliseconds
         long seconds = pastMillis / 1000;
         long minutes = seconds / 60;
         if( minutes > 0 )

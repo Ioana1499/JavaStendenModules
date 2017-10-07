@@ -1,6 +1,6 @@
-# Assignments Index
-Assignments for this week:
- - 7.1 to 7.34
+# Assignments Chapter 7
+### Required assignments for this week: :heavy_exclamation_mark:
+ - Exercises 7.1 to 7.34 :white_check_mark:
 
 # Assignment Solutions
  - **Exercise 7.1 Add several comments to the sales item while keeping an eye on the inspector 

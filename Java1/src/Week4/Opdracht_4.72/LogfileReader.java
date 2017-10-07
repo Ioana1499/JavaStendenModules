@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * A class to read information from a file of web server accesses.
  * Currently, the log file is assumed to contain simply
- * date and time information in the format:
+ * date and timeOfCollision information in the format:
  *
  *    year month day hour minute
  * Log entries are sorted into ascending order of date.

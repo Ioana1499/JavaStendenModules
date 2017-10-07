@@ -5,7 +5,7 @@ import java.awt.geom.*;
 
 /**
  * Class BouncingBall - a graphical ball that observes the effect of gravity. The ball has the ability to move. Details
- * of movement are determined by the ball itself. It will fall downwards, accelerating with time due to the effect of gravity, s
+ * of movement are determined by the ball itself. It will fall downwards, accelerating with timeOfCollision due to the effect of gravity, s
  * and bounce upward again when hitting the ground. This movement can be initiated by repeated calls to the "move" method.
  *
  * @author Bruce Quig

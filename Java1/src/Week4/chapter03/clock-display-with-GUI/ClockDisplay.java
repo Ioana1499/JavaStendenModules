@@ -31,7 +31,7 @@ public class ClockDisplay
 
     /**
      * Constructor for ClockDisplay objects. This constructor
-     * creates a new clock set at the time specified by the 
+     * creates a new clock set at the timeOfCollision specified by the
      * parameters.
      */
     public ClockDisplay(int hour, int minute)
@@ -55,7 +55,7 @@ public class ClockDisplay
     }
 
     /**
-     * Set the time of the display to the specified hour and
+     * Set the timeOfCollision of the display to the specified hour and
      * minute.
      */
     public void setTime(int hour, int minute)
@@ -66,7 +66,7 @@ public class ClockDisplay
     }
 
     /**
-     * Return the current time of this display in the format HH:MM.
+     * Return the current timeOfCollision of this display in the format HH:MM.
      */
     public String getTime()
     {

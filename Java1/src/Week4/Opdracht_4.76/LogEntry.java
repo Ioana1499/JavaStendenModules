@@ -69,7 +69,7 @@ public class LogEntry implements Comparable<LogEntry>
     }
     
     /**
-     * Compare the date/time combination of this log entry
+     * Compare the date/timeOfCollision combination of this log entry
      * with another.
      * @param otherEntry The other entry to compare against.
      * @return A negative value if this entry comes before the other.

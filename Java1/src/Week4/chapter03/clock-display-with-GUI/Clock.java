@@ -5,7 +5,7 @@ import javax.swing.border.*;
 
 /**
  * A very simple GUI (graphical user interface) for the clock display.
- * In this implementation, time runs at about 3 minutes per second, so that
+ * In this implementation, timeOfCollision runs at about 3 minutes per second, so that
  * testing the display is a little quicker.
  * 
  * @author Michael Kölling and David J. Barnes

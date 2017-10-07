@@ -72,7 +72,7 @@ public class Canvas
     {
         if( graphic == null )
         {
-            // first time: instantiate the offscreen image and fill it with
+            // first timeOfCollision: instantiate the offscreen image and fill it with
             // the background color
             Dimension size = canvas.getSize();
             canvasImage = canvas.createImage( size.width, size.height );

@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
  * "World of Zuul" is a very simple, text based adventure game.  
  * 
  * This parser reads user input and tries to interpret it as an "Adventure"
- * command. Every time it is called it reads a line from the terminal and
+ * command. Every timeOfCollision it is called it reads a line from the terminal and
  * tries to interpret the line as a two-word command. It returns the command
  * as an object of class Command.
  *

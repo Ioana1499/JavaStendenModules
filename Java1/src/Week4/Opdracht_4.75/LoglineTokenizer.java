@@ -4,7 +4,7 @@ import java.util.Scanner;
  * Break up line from a web server log file into
  * its separate fields.
  * Currently, the log file is assumed to contain simply
- * integer date and time information.
+ * integer date and timeOfCollision information.
  * 
  * @author David J. Barnes and Michael Kolling.
  * @version 2008.03.30

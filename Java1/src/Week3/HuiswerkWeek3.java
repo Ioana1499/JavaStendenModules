@@ -91,12 +91,12 @@ Rectangle window = new Rectangle( 0,1 );
 
 // Opdracht 3.28
 /*
-In the second one it takes arguments that will be set as time in the NumberDisplay property.
+In the second one it takes arguments that will be set as timeOfCollision in the NumberDisplay property.
 */
 
 // Opdracht 3.29
 /*
-Because the set time calles updateDisplay();
+Because the set timeOfCollision calles updateDisplay();
 */
 
 // Opdracht 3.30

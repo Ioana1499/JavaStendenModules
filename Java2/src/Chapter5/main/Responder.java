@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * The responder class represents a response generator object. It is
  * used to generate an automatic response.
- * This is the second version of this class. This time, we generate
+ * This is the second version of this class. This timeOfCollision, we generate
  * some random behavior by randomly selecting a phrase from a predefined
  * list of responses.
  *

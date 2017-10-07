@@ -1,10 +1,10 @@
-# Assignment index 
-Assignments for this week:
- - 5.1 to 5.38
- - 5.40 to 4.43
- - 5.46 to 5.70
- - 5.72
- - 5.73
+# Assignments Chapter 5 
+###Required assignments for this week: :heavy_exclamation_mark:
+ - Exercises 5.1 to 5.38 :white_check_mark:
+ - Exercises 5.40 to 4.43 :white_check_mark:
+ - Exercises 5.46 to 5.70 :white_check_mark:
+ - Exercises 5.72 :white_check_mark:
+ - Exercises 5.73 :white_check_mark:
   
 # Assignment solutions
  - **5.1 look around**
@@ -434,13 +434,13 @@ class Test{
         BoxBall that moves around inside the box, bouncing off the walls of the box so that the ball 
         always stays inside. The initial position and speed of the ball should be random. The boxBounce 
         method should have a parameter that specifies how many balls are in the box.**
-    - Done see my modified project [MyGame](MyGame/GameWorld.java)
+    - Done see my modified project [MyGame](BallGame/GameWorld.java)
     
  - 5.66 **Give the balls in boxBounce random colors**
-    - Done see my modified project [MyGame](MyGame/GameWorld.java)
+    - Done see my modified project [MyGame](BallGame/GameWorld.java)
  - 5.67 **In class BouncingBall , you will find a definition of gravity (a simple inte- ger). Increase 
         or decrease the gravity value; compile and run the bouncing ball demo again. Do you observe a change**
-   - Done see my modified project [MyGame](MyGame/GameWorld.java)
+   - Done see my modified project [MyGame](BallGame/GameWorld.java)
    
  - 5.68 **Write constant declarations for the following:** 
    - **A public variable that is used to measure tolerance, with the value 0.001.**
