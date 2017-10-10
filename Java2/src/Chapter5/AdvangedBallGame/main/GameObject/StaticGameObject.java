@@ -1,4 +1,4 @@
-package AdvangedBallGame.main.GameObjects;
+package AdvangedBallGame.main.GameObject;
 
 public class StaticGameObject<GameObjectShape> extends GameObject
 {

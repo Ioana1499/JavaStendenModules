@@ -1,4 +1,4 @@
-package AdvangedBallGame.main.GameObjects;
+package AdvangedBallGame.main.GameObject;
 
 import BallGame.Util.ColorUtil;
 
