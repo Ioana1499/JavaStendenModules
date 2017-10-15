@@ -1,4 +1,5 @@
-import java.awt.*;
+import Java1.src.Week1.Exersize11.Canvas;
+
 import java.awt.geom.*;
 
 /**

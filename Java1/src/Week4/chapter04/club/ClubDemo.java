@@ -1,3 +1,5 @@
+import Java1.src.Week4.Opdracht_440.Club;
+import Java1.src.Week4.Opdracht_440.Membership;
 
 /**
  * Provide a demonstration of the Club and Membership

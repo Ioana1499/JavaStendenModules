@@ -1,3 +1,7 @@
+import Java1.src.Week4.Opdracht_439.MusicPlayer;
+import Java1.src.Week4.Opdracht_439.Track;
+import Java1.src.Week4.Opdracht_439.TrackReader;
+
 import java.util.ArrayList;
 
 /**

@@ -1,13 +1,5 @@
 package Assignment6.Main;
 
-import org.omg.PortableServer.THREAD_POLICY_ID;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.text.DateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.Date;
-
 /**
  * The type Container.
  */
@@ -46,22 +38,6 @@ public class Container
     }
 
     /**
-     * Instantiates a new Container.
-     *
-     * @param height   the height
-     * @param width    the width
-     * @param length   the length
-     * @param contents the contents
-     */
-    public Container( int height, int width, int length, int contents )
-    {
-        this.height = height;
-        this.width = width;
-        this.length = length;
-        this.content = contents;
-    }
-
-    /**
      * Gets content.
      *
      * @return the content
@@ -75,10 +51,15 @@ public class Container
      * Add content.
      *
      * @param newContent the new content
+     * @throws FullContainerException the full container exception
      */
-    public void addContent( int newContent )
+    public void addContent( int newContent ) throws FullContainerException
     {
-        this.content += newContent;
+        if( !isAbleToStore( newContent ))
+        {
+            throw new FullContainerException( newContent, getRemainingSpace() );
+        }
+        this.content = newContent;
     }
 
     /**
@@ -159,5 +140,15 @@ public class Container
     public int getRemainingSpace()
     {
         return getSizeM3() - content;
+    }
+
+    /**
+     * Test if there is enough space to store new content.
+     * @param content
+     * @return Are we able to store more stuff?
+     */
+    public boolean isAbleToStore( int content )
+    {
+        return getRemainingSpace() >= content;
     }
 }

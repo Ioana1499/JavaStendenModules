@@ -1,3 +1,7 @@
+import Java1.src.Week1.Exersize11.Circle;
+import Java1.src.Week1.Exersize11.Square;
+import Java1.src.Week1.Exersize11.Triangle;
+
 /**
  * This class represents a simple picture. You can draw the picture using
  * the draw method. But wait, there's more: being an electronic picture, it
@@ -6,7 +10,7 @@
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
+ * @author  Michael Kï¿½lling and David J. Barnes
  * @version 2016.02.29
  */
 public class Picture

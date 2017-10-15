@@ -1,3 +1,6 @@
+import Java1.src.Week4.Opdracht_456.Product;
+import Java1.src.Week4.Opdracht_456.StockManager;
+
 /**
  * Demonstrate the StockManager and Product classes.
  * The demonstration becomes properly functional as

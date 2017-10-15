@@ -1,6 +1,6 @@
+import Java1.src.Week4.Opdracht_439.MusicPlayer;
+
 import java.util.ArrayList;
-import java.util.OptionalInt;
-import java.util.stream.IntStream;
 
 /**
  * A class to hold details of audio files.

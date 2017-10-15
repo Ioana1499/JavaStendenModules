@@ -20,15 +20,15 @@ public class Canvas
     // is done on purpose to keep the interface and instance fields of the
     // shape objects in this project clean and simple for educational purposes.
 
-    private static Canvas canvasSingleton;
+    private static Java1.src.Week1.Exersize11.Canvas canvasSingleton;
 
     /**
      * Factory method to get the canvas singleton object.
      */
-    public static Canvas getCanvas()
+    public static Java1.src.Week1.Exersize11.Canvas getCanvas()
     {
         if(canvasSingleton == null) {
-            canvasSingleton = new Canvas("BlueJ Picture Demo", 500, 300, 
+            canvasSingleton = new Java1.src.Week1.Exersize11.Canvas("BlueJ Picture Demo", 500, 300,
                                          Color.white);
         }
         canvasSingleton.setVisible(true);
@@ -118,7 +118,7 @@ public class Canvas
 
     /**
      * Set the foreground color of the Canvas.
-     * @param  newColor   the new color for the foreground of the Canvas 
+     * @param  newColor   the new color for the foreground of the Canvas
      */
     public void setForegroundColor(String colorString)
     {

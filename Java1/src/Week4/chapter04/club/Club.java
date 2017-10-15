@@ -1,3 +1,5 @@
+import Java1.src.Week4.Opdracht_440.Membership;
+
 /**
  * Store details of club memberships.
  * 

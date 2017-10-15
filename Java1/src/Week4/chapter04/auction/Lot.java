@@ -1,3 +1,5 @@
+import Java1.src.Week4.Opdracht_446.Bid;
+
 /**
  * A class to model an item (or set of items) in an
  * auction: a lot.
@@ -57,7 +59,7 @@ public class Lot
     {
         String details = number + ": " + description;
         if(highestBid != null) {
-            details += "    Bid: " + 
+            details += "    Bid: " +
                        highestBid.getValue();
         }
         else {

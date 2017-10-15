@@ -1,6 +1,6 @@
+import Java1.src.Week4.Opdracht_439.Track;
+
 import java.io.File;
-import java.io.FilenameFilter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -32,7 +32,7 @@ public class TrackReader
      * @param folder The folder to look for files.
      * @param suffix The suffix of the audio type.
      */
-    public ArrayList<Track> readTracks(String folder, String suffix)
+    public ArrayList<Track> readTracks( String folder, String suffix)
     {
         File audioFolder = new File(folder);
         File[] audioFiles = audioFolder.listFiles((dir, name) -> 

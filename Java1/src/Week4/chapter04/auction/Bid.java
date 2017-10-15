@@ -1,3 +1,5 @@
+import Java1.src.Week4.Opdracht_446.Person;
+
 /**
  * A class that models an auction bid.
  * It contains a reference to the Person bidding and the amount bid.

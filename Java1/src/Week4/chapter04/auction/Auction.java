@@ -1,3 +1,7 @@
+import Java1.src.Week4.Opdracht_446.Bid;
+import Java1.src.Week4.Opdracht_446.Lot;
+import Java1.src.Week4.Opdracht_446.Person;
+
 import java.util.ArrayList;
 
 /**
@@ -53,7 +57,7 @@ public class Auction
      * @param bidder The person bidding for the lot.
      * @param value  The value of the bid.
      */
-    public void makeABid(int lotNumber, Person bidder, long value)
+    public void makeABid( int lotNumber, Person bidder, long value)
     {
         Lot selectedLot = getLot(lotNumber);
         if(selectedLot != null) {
