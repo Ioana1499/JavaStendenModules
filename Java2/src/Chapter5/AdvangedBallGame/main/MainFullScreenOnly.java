@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- * Main Program for running the bouncing ball as a standalone application,
+ * Main1 Program for running the bouncing ball as a standalone application,
  * in Full-Screen mode (if full-screen mode is supported).
  * Use ESC Key to quit (need to handle key event).
  */
@@ -69,7 +69,7 @@ public class MainFullScreenOnly extends JFrame
      */
     public static void main( String[] args )
     {
-        // Run UI in the Event Dispatcher Thread (EDT), instead of Main thread
+        // Run UI in the Event Dispatcher Thread (EDT), instead of Main1 thread
         javax.swing.SwingUtilities.invokeLater( new Runnable()
         {
             public void run()

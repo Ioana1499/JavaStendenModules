@@ -1,9 +1,7 @@
 package Assignment6.Test;
 
-import Assignment6.Main.Container;
-import Assignment6.Main.FullContainerException;
-import junit.framework.AssertionFailedError;
-import org.junit.Assert;
+import Assignment6.Main1.Container;
+import Assignment6.Main1.FullContainerException;
 import org.junit.Test;
 
 import static junit.framework.Assert.*;

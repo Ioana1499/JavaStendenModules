@@ -10,7 +10,7 @@ polymorphism.<br>
  - Assignments for week 3 and 4: [Exercises in Chapter 6](src/Chapter6/Assignments.md)
  - Assignments for week 5: [Exercises in Chapter 7](src/Chapter7/Assignments.md)
  - Assignments for week 6: [Exercises in Chapter 8](src/Chapter8/Assignments.md)
- - Assignments for week 6, 7 and 8: [The End assignment](src/EndAssignmend)
+ - Assignments for week 6, 7 and 8: [The End assignment](src/EndAssignmend/EndAssignment.md)
 
 # Author
  - Joris Rietveld <jorisrietveld@gmail.com> - Student at Stenden University

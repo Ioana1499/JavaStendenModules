@@ -61,7 +61,7 @@ public class Game
     }
 
     /**
-     * Main play routine.  Loops until end of play.
+     * Main1 play routine.  Loops until end of play.
      */
     public void play ()
     {

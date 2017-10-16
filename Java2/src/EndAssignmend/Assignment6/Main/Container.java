@@ -1,75 +1,84 @@
 package Assignment6.Main;
 
 /**
- * The type Container.
+ * Author: Joris Rietveld <jorisrietveld@gmail.com>
+ * Created: 15-10-2017 19:46
+ * License: GPLv3 - General Public License version 3
  */
-public class Container
+class Container
 {
-    private final static int RENT_PER_1M2 = 40;
-    private static final int REMOVAL_COST_LTE_2M3 = 60;
-    private static final int REMOVAL_COST_2M3 = 125;
-
-    private int content;
-    private int height;
+    private static final int RENT_PER_M3 = 40;
+    private static final int REMOVAL_COST_LET_2 = 60;
+    private static final int REMOVAL_COST = 120;
     private int width;
     private int length;
+    private int height;
+    private int containerId;
 
     /**
-     * Instantiates a new Container.
-     */
-    public Container()
-    {
-        this( 2, 2, 6 );
-    }
-
-    /**
-     * Instantiates a new Container.
+     * Create an new container with certain dimensions.
      *
-     * @param height the height
-     * @param width  the width
-     * @param length the length
+     * @param id     the id code of the container
+     * @param width  the width of the container.
+     * @param length the length of the container.
+     * @param height the height of the container.
      */
-    public Container( int height, int width, int length )
+    Container( int id, int width, int length, int height )
     {
-        this.height = height;
+        this.containerId = id;
         this.width = width;
         this.length = length;
-        this.content = 0;
+        this.height = height;
     }
 
     /**
-     * Gets content.
+     * Gets width.
      *
-     * @return the content
+     * @return the width of the container.
      */
-    public int getContent()
+    int getWidth()
     {
-        return this.content;
+        return width;
     }
 
     /**
-     * Add content.
+     * Gets length.
      *
-     * @param newContent the new content
-     * @throws FullContainerException the full container exception
+     * @return the length of the container.
      */
-    public void addContent( int newContent ) throws FullContainerException
+    int getLength()
     {
-        if( !isAbleToStore( newContent ))
-        {
-            throw new FullContainerException( newContent, getRemainingSpace() );
-        }
-        this.content = newContent;
+        return length;
     }
 
     /**
-     * Gets rent per day.
+     * Gets height.
      *
-     * @return the rent per day
+     * @return the height of the container.
      */
-    public int getRentPerDay()
+    int getHeight()
     {
-        return this.getSizeM2() * RENT_PER_1M2;
+        return height;
+    }
+
+    /**
+     * Gets volume.
+     *
+     * @return the volume of the container.
+     */
+    int getVolume()
+    {
+        return width * length * height;
+    }
+
+    /**
+     * Gets rent price.
+     *
+     * @return the rent price
+     */
+    int getRentPrice()
+    {
+        return this.getVolume() * Container.RENT_PER_M3;
     }
 
     /**
@@ -77,78 +86,18 @@ public class Container
      *
      * @return the removal cost
      */
-    public int getRemovalCost()
+    int getRemovalCost()
     {
-        return this.getContent() <= 2 ? REMOVAL_COST_LTE_2M3 : REMOVAL_COST_2M3;
+        return this.getVolume() <= 2 ? Container.REMOVAL_COST_LET_2 : RENT_PER_M3;
     }
 
     /**
-     * Gets width.
+     * Gets container id.
      *
-     * @return the width
+     * @return the container id
      */
-    public int getWidth()
+    public int getContainerId()
     {
-        return this.width;
-    }
-
-    /**
-     * Gets height.
-     *
-     * @return the height
-     */
-    public int getHeight()
-    {
-        return this.height;
-    }
-
-    /**
-     * Gets length.
-     *
-     * @return the length
-     */
-    public int getLength()
-    {
-        return this.length;
-    }
-
-    /**
-     * Gets size in quebec meters.
-     *
-     * @return the size m 3
-     */
-    public int getSizeM3()
-    {
-        return this.height * this.length * this.width;
-    }
-
-    /**
-     * Gets size square metera.
-     *
-     * @return The size in m3
-     */
-    public int getSizeM2()
-    {
-        return this.width * this.length;
-    }
-
-    /**
-     * Gets remaining space.
-     *
-     * @return remaining space
-     */
-    public int getRemainingSpace()
-    {
-        return getSizeM3() - content;
-    }
-
-    /**
-     * Test if there is enough space to store new content.
-     * @param content
-     * @return Are we able to store more stuff?
-     */
-    public boolean isAbleToStore( int content )
-    {
-        return getRemainingSpace() >= content;
+        return containerId;
     }
 }

@@ -7,7 +7,7 @@ package ZuulEnumTwo;
  * A command currently consists of two parts: a CommandWord and a string
  * (for example, if the command was "take map", then the two parts
  * are TAKE and "map").
- * The way this is used is: Commands are already checked for being valid
+ * The way this is used is: Terminal are already checked for being valid
  * command words. If the user entered an invalid command (a word that is not
  * known) then the CommandWord is UNKNOWN.
  * If the command had only one word, then the second word is <null>.

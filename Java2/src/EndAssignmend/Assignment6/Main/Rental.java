@@ -1,74 +1,85 @@
 package Assignment6.Main;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.time.LocalDate;
 import java.time.Period;
 
+/**
+ * Author: Joris Rietveld <jorisrietveld@gmail.com>
+ * Created: 15-10-2017 19:47
+ * License: GPLv3 - General Public License version 3
+ */
 public class Rental
 {
-    private boolean paied = false;
-
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Container container;
-    private LocalDate rentStartDate;
-    private LocalDate rentEndDate;
-    private Period rentalPeriod;
-    private int price;
+    private boolean paid;
 
-    Rental( Container container, LocalDate rentStartDate, LocalDate rentEndDate )
+    public Rental( LocalDate startDate, LocalDate endDate, Container container )
     {
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.container = container;
-        this.rentStartDate = rentStartDate;
-        this.rentEndDate = rentEndDate;
-        this.updatePeriod();
+        this.paid = false;
     }
 
-    private void updatePeriod()
+    public boolean containsDate( LocalDate date )
     {
-        rentalPeriod = Period.between( rentStartDate, rentStartDate );
+        return date.isAfter( startDate ) && date.isBefore( endDate );
     }
 
-    public void updateStartDate( LocalDate newStartDate )
+    public int getContainerId()
     {
-        this.rentStartDate = newStartDate;
-        this.updatePeriod();
+        return this.container.getContainerId();
     }
 
-    public void updateEndDate( LocalDate newEndDate )
+    public int getRent()
     {
-        this.rentEndDate = newEndDate;
-        this.updatePeriod();
+        return this.container.getRentPrice() * this.getRentalPeriod().getDays();
     }
 
-    public void updateRentalPeriod( LocalDate newStartDate, LocalDate newEndDate )
+    public int getRemovalCost()
     {
-        updateStartDate( newStartDate );
-        updateEndDate( newEndDate );
+        return this.container.getRemovalCost();
     }
 
-    public boolean isOverlappingPeriod( Period period )
+    public int getTotalPrice()
     {
-        throw new NotImplementedException();
+        return this.getRemovalCost() + this.getRemovalCost();
     }
 
-    public boolean isPaied()
+    public LocalDate getStartDate()
     {
-        return this.paied;
+        return startDate;
     }
 
-    public int getRentPrice()
+    public void updateStartDate( LocalDate startDate )
     {
-        throw new NotImplementedException();
+        this.startDate = startDate;
     }
 
-    public int getPrice()
+    public LocalDate getEndDate()
     {
-        throw new NotImplementedException();
+        return endDate;
     }
 
-    public Rental finsishRental()
+    public void updateEndDate( LocalDate endDate )
     {
-        throw new NotImplementedException();
-      //  this.container.getContent( )
+        this.endDate = endDate;
+    }
+
+    public Period getRentalPeriod()
+    {
+        return Period.between( startDate, endDate );
+    }
+
+    public boolean isPaid()
+    {
+        return this.paid;
+    }
+
+    public void pay()
+    {
+        this.paid = true;
     }
 }
