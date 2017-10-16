@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Tab text="Add New Container">
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="699.0">
+            <children>
+                <Slider layoutX="40.0" layoutY="124.0" prefHeight="14.0" prefWidth="626.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0" />
+                <Label layoutX="271.0" layoutY="71.0" prefHeight="17.0" prefWidth="170.0" text="Container Width:" textAlignment="CENTER" />
+                <Slider layoutX="40.0" layoutY="216.0" prefHeight="14.0" prefWidth="626.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0" />
+                <Label layoutX="271.0" layoutY="163.0" prefHeight="17.0" prefWidth="170.0" text="Container Length:" textAlignment="CENTER" />
+                <Slider layoutX="41.0" layoutY="316.0" prefHeight="14.0" prefWidth="626.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0" />
+                <Label layoutX="272.0" layoutY="263.0" prefHeight="17.0" prefWidth="170.0" text="Container Height:" textAlignment="CENTER" />
+                <Button layoutX="40.0" layoutY="374.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="623.0" text="Add Container" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="38.0" />
+            </children>
+        </AnchorPane>
+    </content>
+</Tab>
