@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="865.0" snapToPixel="false" fx:controller="Assignment6.Main.GUI.Controller.MainController" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="458.0" prefWidth="863.0">
+         <right>
+            <VBox prefHeight="529.0" prefWidth="164.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#showRentalTabs" prefHeight="116.0" prefWidth="164.0" text="Rental Mananger">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/handshake.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showContainerTabs" prefHeight="116.0" prefWidth="164.0" text="Container Manager">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/package.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="126.0" mnemonicParsing="false" onAction="#showStatisticsTabs" prefHeight="116.0" prefWidth="164.0" text="Statistics">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/bar-chart.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="242.0" mnemonicParsing="false" onAction="#showSettingsTab" prefHeight="116.0" prefWidth="164.0" text="Settings">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/settings-2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <TabPane prefHeight="453.0" prefWidth="699.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Add New Rental">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ChoiceBox layoutX="39.0" layoutY="58.0" prefHeight="25.0" prefWidth="626.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="36.0" />
+                              <Label layoutX="39.0" layoutY="16.0" prefHeight="34.0" prefWidth="628.0" text="Select an container" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+                              <DatePicker layoutX="40.0" layoutY="341.0" prefHeight="25.0" prefWidth="306.0" AnchorPane.leftAnchor="40.0" />
+                              <Label layoutX="42.0" layoutY="293.0" prefHeight="34.0" prefWidth="307.0" text="Select an start date" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+                              <DatePicker layoutX="359.0" layoutY="341.0" prefHeight="25.0" prefWidth="304.0" AnchorPane.rightAnchor="38.0" />
+                              <Label layoutX="360.0" layoutY="293.0" prefHeight="34.0" prefWidth="305.0" text="Select an end date" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+                              <Button layoutX="41.0" layoutY="388.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="623.0" text="Add Rental" textAlignment="CENTER" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="37.0" />
+                              <ListView layoutX="40.0" layoutY="101.0" prefHeight="180.0" prefWidth="625.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="36.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Rental Overview">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="26.0" layoutY="22.0" prefHeight="393.0" prefWidth="650.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="22.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="ID" />
+                                  <TableColumn prefWidth="75.0" text="Start Date" />
+                                    <TableColumn prefWidth="75.0" text="End Date" />
+                                    <TableColumn prefWidth="75.0" text="Rental Time" />
+                                    <TableColumn prefWidth="83.66665649414062" text="Container ID" />
+                                    <TableColumn prefWidth="88.33331298828125" text="Rent" />
+                                    <TableColumn editable="false" prefWidth="88.33331298828125" text="Total Cost" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Add New Container">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="699.0">
+                           <children>
+                              <Slider layoutX="40.0" layoutY="124.0" prefHeight="14.0" prefWidth="626.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0" />
+                              <Label layoutX="271.0" layoutY="71.0" prefHeight="17.0" prefWidth="170.0" text="Container Width:" textAlignment="CENTER" />
+                              <Slider layoutX="40.0" layoutY="216.0" prefHeight="14.0" prefWidth="626.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0" />
+                              <Label layoutX="271.0" layoutY="163.0" prefHeight="17.0" prefWidth="170.0" text="Container Length:" textAlignment="CENTER" />
+                              <Slider layoutX="41.0" layoutY="316.0" prefHeight="14.0" prefWidth="626.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0" />
+                              <Label layoutX="272.0" layoutY="263.0" prefHeight="17.0" prefWidth="170.0" text="Container Height:" textAlignment="CENTER" />
+                              <Button layoutX="40.0" layoutY="374.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="623.0" text="Add Container" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="38.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Container Overview">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="29.0" layoutY="18.0" prefHeight="393.0" prefWidth="650.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="18.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="ID" />
+                                    <TableColumn prefWidth="75.0" text="Start Date" />
+                                    <TableColumn prefWidth="75.0" text="End Date" />
+                                    <TableColumn prefWidth="75.0" text="Rental Time" />
+                                    <TableColumn prefWidth="83.66665649414062" text="Container ID" />
+                                    <TableColumn prefWidth="88.33331298828125" text="Rent" />
+                                    <TableColumn editable="false" prefWidth="88.33331298828125" text="Total Cost" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Profits">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AreaChart layoutX="32.0" layoutY="26.0" prefHeight="379.0" prefWidth="625.0" title="Total Profits" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="26.0">
+                                <xAxis>
+                                  <CategoryAxis label="Date" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Container Volume">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <StackedBarChart layoutX="22.0" layoutY="51.0" prefHeight="357.0" prefWidth="645.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="51.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </StackedBarChart>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Rental Time">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <StackedBarChart layoutX="26.0" layoutY="49.0" prefHeight="357.0" prefWidth="645.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="49.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </StackedBarChart>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Program Settings">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="32.0" layoutY="172.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="638.0" style="-fx-background-color: red;" text="Launch Nuclear Weapons" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="172.0">
+                                 <font>
+                                    <Font name="Impact" size="48.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
