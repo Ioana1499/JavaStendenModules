@@ -42,7 +42,7 @@ public class GameWorld extends JPanel
 
         // Init the ball at a random location (inside the box) and moveAngle
         IntStream.range( 0, ballAmount ).forEach( i -> balls.add( new Ball( gameDimensions ) )  );
-        rainbowBall = new Ball( 100, 100,  300, 2, 45, Color.red );
+        rainbowBall = new Ball( 100, 100,  200, 2, 45, Color.red );
         rainbowBall.rainbowBall = true;
 
         // Init the Container Box to fill the screen

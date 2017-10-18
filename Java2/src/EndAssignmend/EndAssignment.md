@@ -16,5 +16,5 @@ Java and write unit tests for it.
 ###Diagram of Implementation Classes
 
 ##Code
-[Click here to go to the code](Assignment6/Main/)
+[Click here to go to the code](Assignment6/ContainerCompany/)
   
