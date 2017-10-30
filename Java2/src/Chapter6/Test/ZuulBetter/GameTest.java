@@ -7,7 +7,7 @@ public class GameTest
 {
 
     /**
-     * Test the game.
+     * test the game.
      * @param args Commandline arguments.
      */
     public static void main(String[] args)

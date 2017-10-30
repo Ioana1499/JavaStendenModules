@@ -78,7 +78,7 @@ public class LabClass
     
     /**
      * Print out a class list with other LabClass details to the standard
-     * terminal.
+     * Terminal.
      */
     public void printList()
     {

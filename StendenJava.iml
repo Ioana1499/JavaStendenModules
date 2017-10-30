@@ -8,9 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter6" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter7" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter8" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Tutorial" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Java1" />
     </content>
     <orderEntry type="jdk" jdkName="9" jdkType="JavaSDK" />
@@ -25,6 +26,16 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="MigLayout" level="project" />
+    <orderEntry type="library" name="javax.money:money-api:1.0.1" level="project" />
+    <orderEntry type="module-library">
+      <library name="JUnit5">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/junit/lib/junit-jupiter-api-5.0.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/junit/lib/opentest4j-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

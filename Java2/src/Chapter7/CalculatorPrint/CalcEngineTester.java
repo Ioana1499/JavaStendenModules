@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Test the CalcEngine class.
+ * test the CalcEngine class.
  *
  * @author Hacker T. Largebrain
  * @version 1.0
@@ -28,7 +28,7 @@ public class CalcEngineTester
     }
 
     /**
-     * Test everything.
+     * test everything.
      */
     @Test
     public void testAll()
@@ -41,7 +41,7 @@ public class CalcEngineTester
     }
 
     /**
-     * Test the plus operation of the engine.
+     * test the plus operation of the engine.
      *
      * @return the result of calculating 3+4.
      */
@@ -67,7 +67,7 @@ public class CalcEngineTester
     }
 
     /**
-     * Test the minus operation of the engine.
+     * test the minus operation of the engine.
      *
      * @return the result of calculating 9 - 4.
      */

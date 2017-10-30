@@ -108,7 +108,7 @@ public class SalesItem
     }
     
     /**
-     * Show all comments on screen. (Currently, for testing purposes: print to the terminal.
+     * Show all comments on screen. (Currently, for testing purposes: print to the Terminal.
      * Modify later for web display.)
      */
     public void showInfo()

@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * The NewsFeed class stores news posts for the news feed in a
  * social network application (like FaceBook or Google+).
  * Display of the posts is currently simulated by printing the
- * details to the terminal. (Later, this should display in a browser.)
+ * details to the Terminal. (Later, this should display in a browser.)
  * This version does not save the data to disk, and it does not
  * provide any search or ordering functions.
  *
@@ -54,7 +54,7 @@ public class NewsFeed
 
     /**
      * Show the news feed. Currently: print the news feed details
-     * to the terminal. (To do: replace this later with display
+     * to the Terminal. (To do: replace this later with display
      * in web browser.)
      */
     public void show()

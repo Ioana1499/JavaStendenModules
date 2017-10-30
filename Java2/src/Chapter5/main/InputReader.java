@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 /**
- * InputReader reads typed text input from the standard text terminal.
+ * InputReader reads typed text input from the standard text Terminal.
  * The text typed by a user is then chopped into words, and a set of words
  * is provided.
  *
@@ -18,7 +18,7 @@ public class InputReader
     private Scanner reader;
 
     /**
-     * Create a new InputReader that reads text from the text terminal.
+     * Create a new InputReader that reads text from the text Terminal.
      */
     public InputReader()
     {
@@ -26,7 +26,7 @@ public class InputReader
     }
 
     /**
-     * Read a line of text from standard input (the text terminal),
+     * Read a line of text from standard input (the text Terminal),
      * and return it as a String.
      *
      * @return A String typed by the user.

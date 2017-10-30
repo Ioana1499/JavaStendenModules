@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public abstract class Post
 {
+
     protected String username;  // username of the post's author
     protected long timestamp;
     protected int likes;
@@ -73,7 +74,7 @@ public abstract class Post
 
     /**
      * Display the details of this post.
-     * (Currently: Print to the text terminal. This is simulating display
+     * (Currently: Print to the text Terminal. This is simulating display
      * in a web browser for now.)
      */
     public abstract void display();

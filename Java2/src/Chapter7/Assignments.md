@@ -95,7 +95,7 @@
     - Done see: [SalesItemTest](OnlineShopJunit/SalesItemTest.java)
     
  - **Exercise 7.21 Make sure the classes in the project are compiled, and then create a CalcEngineTester object within 
-    BlueJ. Call the testAll method. What is printed in the terminal window? Do you believe the final line of what it says?**
+    BlueJ. Call the testAll method. What is printed in the Terminal window? Do you believe the final line of what it says?**
     - No because it will always print it.
     
  - **Exercise 7.22 Using the object you created in the previous exercise, call the testPlus method. What result does it 
@@ -162,7 +162,7 @@
     little, too much, or about right? If you feel that it is too little or too much, either add further print 
     statements or remove some until you feel that you have the right level of detail.**
     - To much, this violates the single responsibility principle. You could use an logger but no method should do more 
-    than one thing. If your method adds 2 numbers it should not spam the terminal. (unless you have an `printSumOff(x,y)` 
+    than one thing. If your method adds 2 numbers it should not spam the Terminal. (unless you have an `printSumOff(x,y)` 
     method of course ). 
     
  - **Exercise 7.33 What are the respective advantages and disadvantages of using manual walkthroughs or print statements 

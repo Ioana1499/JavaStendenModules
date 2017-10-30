@@ -41,7 +41,7 @@ public class SalesItemTest
     }
 
     /**
-     * Test that a comment can be added, and that the comment count is correct afterwards.
+     * test that a comment can be added, and that the comment count is correct afterwards.
      */
     @Test
     public void testAddComment()
@@ -52,7 +52,7 @@ public class SalesItemTest
     }
 
     /**
-     * Test that a comment using an illegal rating value is rejected.
+     * test that a comment using an illegal rating value is rejected.
      */
     @Test
     public void testIllegalRating()
@@ -62,7 +62,7 @@ public class SalesItemTest
     }
 
     /**
-     * Test that a sales item is correctly initialised (name and price).
+     * test that a sales item is correctly initialised (name and price).
      */
     @Test
     public void testInit()
@@ -73,7 +73,7 @@ public class SalesItemTest
     }
 
     /**
-     * Test that a sales item is correctly initialised (name and price).
+     * test that a sales item is correctly initialised (name and price).
      */
     @Test
     public void testShowInfo()
@@ -84,7 +84,7 @@ public class SalesItemTest
     }
 
     /**
-     * Test that a sales item is correctly initialised (name and price).
+     * test that a sales item is correctly initialised (name and price).
      */
     @Test
     public void testNumberOfComments()

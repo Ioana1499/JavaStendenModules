@@ -38,7 +38,7 @@ public class Student extends Person
     }
     
     /**
-     * Print the student's name and ID number to the output terminal.
+     * Print the student's name and ID number to the output Terminal.
      */
     public void print()
     {

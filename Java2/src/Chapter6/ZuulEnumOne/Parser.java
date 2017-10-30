@@ -9,7 +9,7 @@ public class Parser
     private Scanner reader;         // source of command input
 
     /**
-     * Create a parser to read from the terminal window.
+     * Create a parser to read from the Terminal window.
      */
     public Parser ()
     {

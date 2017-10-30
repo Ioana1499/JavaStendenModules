@@ -155,7 +155,7 @@
    - MVC can be used to structure different layers of an application into:
      - A data layer `the model`, that contains: Business logic, Databases, etc
      - A action layer `the controller`, that contains: actions/paths the application can execute.
-     - A presentation layer `the view`, that contains: forms, windows, text boxes, terminal output, webpages.
+     - A presentation layer `the view`, that contains: forms, windows, text boxes, Terminal output, webpages.
  
  - **Exercise 6.20 Extend either your adventure project or the zuul-better project so that a room
      can contain a single item. Items have a description and a weight. When creating rooms and
