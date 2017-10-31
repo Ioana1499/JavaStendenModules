@@ -1,6 +1,5 @@
-package Gui.dashboard;
+package com.jorisrietveld.containercompany.presentation.dashboard;
 
-import Gui.BaseController;
 
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>

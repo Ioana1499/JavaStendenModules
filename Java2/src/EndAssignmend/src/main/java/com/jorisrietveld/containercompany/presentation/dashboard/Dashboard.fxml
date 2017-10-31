@@ -84,8 +84,8 @@
         <BorderPane.margin>
           <Insets/>
         </BorderPane.margin>
-        <fx:include source="rental/add/AddRental.fxml" fx:id="AddRental"/>
-        <fx:include source="rental/overview/RentalOverview.fxml" fx:id="RentalOverview"/>
+        <fx:include source="rental/AddRental.fxml" fx:id="AddRental"/>
+        <fx:include source="rental/RentalOverview.fxml" fx:id="RentalOverview"/>
       </TabPane>
     </center>
   </BorderPane>

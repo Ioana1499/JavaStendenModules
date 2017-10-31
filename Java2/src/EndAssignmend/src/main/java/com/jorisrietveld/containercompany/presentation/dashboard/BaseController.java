@@ -1,10 +1,9 @@
-package Gui;
+package com.jorisrietveld.containercompany.presentation.dashboard;
 
-import containercompany.ContainerModel;
-import containercompany.RentalModel;
+import com.jorisrietveld.containercompany.model.container.ContainerModel;
+import com.jorisrietveld.containercompany.model.rental.RentalModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
