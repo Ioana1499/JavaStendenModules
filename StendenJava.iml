@@ -8,10 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter6" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter7" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter8" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/Tutorial" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Java1" />
     </content>
     <orderEntry type="jdk" jdkName="9" jdkType="JavaSDK" />
