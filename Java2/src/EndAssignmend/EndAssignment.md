@@ -7,21 +7,8 @@ Java and write unit tests for it.
 
 ## Case 
 
-## Use Case Description
-1. A customer wants to rent a tunnel container and contacts an employee of the container
-company. The employee registers an container.
-
-#####Triggers
-####Actors
-####Preconditions
-####Goals 
-####Not Available
-####Steps Of Execution
-
-## Entities/Objects
-
 ## UML Class Diagram
-
+[![IMAGE ALT TEXT HERE](uml.png)
 ###Domain Model Diagram
 
 ###Diagram of Implementation Classes
