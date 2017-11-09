@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<Tab text="Profits"
+     fx:controller="com.jorisrietveld.containercompany.presentation.dashboard.statistics.StatisticsController"
+     xmlns="http://javafx.com/javafx/8.0.141"
+     xmlns:fx="http://javafx.com/fxml/1">
+    <!-- This is the component that displays the profits data in the statistics manager. -->
+
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AreaChart layoutX="32.0"
+                   layoutY="26.0"
+                   prefHeight="379.0"
+                   prefWidth="625.0"
+                   title="Total Profits Per Day"
+                   AnchorPane.bottomAnchor="33.0"
+                   AnchorPane.leftAnchor="32.0"
+                   AnchorPane.rightAnchor="44.0"
+                   AnchorPane.topAnchor="26.0">
+            <xAxis>
+                <CategoryAxis label="Date" side="BOTTOM"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Profits in euros" side="LEFT"/>
+            </yAxis>
+        </AreaChart>
+    </AnchorPane>
+</Tab>

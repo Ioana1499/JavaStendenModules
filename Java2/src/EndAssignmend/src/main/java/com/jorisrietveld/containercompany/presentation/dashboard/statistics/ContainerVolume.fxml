@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<Tab text="Container Volume"
+     fx:controller="com.jorisrietveld.containercompany.presentation.dashboard.statistics.StatisticsController"
+     xmlns="http://javafx.com/javafx/8.0.141"
+     xmlns:fx="http://javafx.com/fxml/1">
+    <!-- This is the component that displays the container volume data in the statistics manager. -->
+
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <StackedBarChart layoutX="22.0"
+                         layoutY="51.0"
+                         prefHeight="357.0"
+                         prefWidth="645.0"
+                         title="Container Volume"
+                         AnchorPane.bottomAnchor="33.0"
+                         AnchorPane.leftAnchor="32.0"
+                         AnchorPane.rightAnchor="44.0"
+                         AnchorPane.topAnchor="26.0">
+            <xAxis>
+                <CategoryAxis label="Containers" side="BOTTOM"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Volume in m3" side="LEFT"/>
+            </yAxis>
+        </StackedBarChart>
+    </AnchorPane>
+</Tab>

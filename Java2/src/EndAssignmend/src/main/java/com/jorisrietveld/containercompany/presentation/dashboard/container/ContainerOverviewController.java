@@ -1,6 +1,7 @@
-package Gui.Container;
+package com.jorisrietveld.containercompany.presentation.dashboard.container;
 
-import Gui.BaseController;
+import com.jorisrietveld.containercompany.presentation.dashboard.BaseController;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -11,8 +12,10 @@ import java.util.ResourceBundle;
  * Created: 17-10-2017 09:07
  * License: GPLv3 - General Public License version 3
  */
-public class ContainerController extends BaseController implements Initializable
+public class ContainerOverviewController extends BaseController implements Initializable
 {
+    @FXML
+
     /**
      * Called to initialize a controller after its root element has been
      * completely processed.
