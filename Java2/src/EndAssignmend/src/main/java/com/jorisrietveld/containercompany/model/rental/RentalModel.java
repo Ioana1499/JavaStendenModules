@@ -89,7 +89,6 @@ public class RentalModel extends StorageModel<Rental>
 
     /**
      * Gets total revenue.
-     *
      * @param containerId the container id
      * @return the total revenue
      */
