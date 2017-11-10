@@ -2,8 +2,8 @@ package com.jorisrietveld.containercompany.presentation.dashboard.rental;
 
 import com.jorisrietveld.containercompany.model.container.Container;
 import com.jorisrietveld.containercompany.model.rental.Rental;
-import com.jorisrietveld.containercompany.presentation.dashboard.BaseController;
-import com.jorisrietveld.containercompany.presentation.util.AplicationDialog;
+import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
+import com.jorisrietveld.containercompany.presentation.util.DialogFactory;
 import com.jorisrietveld.containercompany.presentation.util.DateConverter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
  * Created: 08-11-2017 04:24
  * License: GPLv3 - General Public License version 3
  */
-public class AddRentalController extends BaseController implements Initializable
+public class AddRentalController extends AbstractPresenter implements Initializable
 {
     private static final int RECENT_HISTORY_DAYS = 60;
 
@@ -146,7 +146,7 @@ public class AddRentalController extends BaseController implements Initializable
         try
         {
             rentalRepository.addRental( datePickerStart.getValue(), getDatePickerEnd.getValue(), containerRepository.getById( containerChoiceBox.getValue().id ));
-            AplicationDialog.createInfoDialog(
+            DialogFactory.createInfoDialog(
                     "Successfully added the Rental",
                     "The rental is successfully added to the Rental Model.",
                     "Click on OK to close this window."
@@ -156,7 +156,7 @@ public class AddRentalController extends BaseController implements Initializable
         }
         catch( IllegalArgumentException invalidArgument )
         {
-            AplicationDialog.createErrorDialog(
+            DialogFactory.createErrorDialog(
                     "Error while adding the rental",
                     invalidArgument.getMessage(),
                     "Please correct the error and try again, click on OK to close this window."

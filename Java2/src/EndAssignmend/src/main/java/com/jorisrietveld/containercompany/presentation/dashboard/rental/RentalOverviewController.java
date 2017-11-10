@@ -1,7 +1,7 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.rental;
 
 import com.jorisrietveld.containercompany.model.rental.Rental;
-import com.jorisrietveld.containercompany.presentation.dashboard.BaseController;
+import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
  * Created: 17-10-2017 09:08
  * License: GPLv3 - General Public License version 3
  */
-public class RentalOverviewController extends BaseController implements Initializable
+public class RentalOverviewController extends AbstractPresenter implements Initializable
 {
     /**
      * An list with observable rental records that will be displayed inside the table view node.

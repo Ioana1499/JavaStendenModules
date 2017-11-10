@@ -15,44 +15,44 @@ import java.io.StringWriter;
  * Created: 09-11-2017 11:33
  * License: GPLv3 - General Public License version 3
  */
-public class AplicationDialog
+public class DialogFactory
 {
     public static void createInfoDialog( String title, String contentText )
     {
-        createSimpleDialog( Alert.AlertType.INFORMATION, title, contentText );
+        createDialog( Alert.AlertType.INFORMATION, title, contentText );
     }
 
     public static void createInfoDialog( String title, String headerText, String contentText )
     {
-        createSimpleDialog( Alert.AlertType.INFORMATION, title, headerText, contentText );
+        createDialog( Alert.AlertType.INFORMATION, title, headerText, contentText );
     }
 
     public static void createWarningDialog( String title, String contentText )
     {
-        createSimpleDialog( Alert.AlertType.WARNING, title, contentText );
+        createDialog( Alert.AlertType.WARNING, title, contentText );
     }
 
     public static void createWarningDialog( String title, String headerText, String contentText )
     {
-        createSimpleDialog( Alert.AlertType.WARNING, title, headerText, contentText );
+        createDialog( Alert.AlertType.WARNING, title, headerText, contentText );
     }
 
     public static void createErrorDialog( String title, String contentText )
     {
-        createSimpleDialog( Alert.AlertType.ERROR, title, contentText  );
+        createDialog( Alert.AlertType.ERROR, title, contentText  );
     }
 
     public static void createErrorDialog( String title, String headerText, String contentText )
     {
-        createSimpleDialog( Alert.AlertType.ERROR, title, headerText, contentText );
+        createDialog( Alert.AlertType.ERROR, title, headerText, contentText );
     }
 
-    public static void createSimpleDialog( Alert.AlertType type, String title, String contentText )
+    public static void createDialog( Alert.AlertType type, String title, String contentText )
     {
-        createSimpleDialog( type, title, null, contentText );
+        createDialog( type, title, null, contentText );
     }
 
-    public static void createSimpleDialog( Alert.AlertType type, String title, String headerText, String contentText )
+    public static void createDialog( Alert.AlertType type, String title, String headerText, String contentText )
     {
         Alert alert = new Alert( type );
         alert.setTitle( title );
@@ -71,10 +71,10 @@ public class AplicationDialog
         createExceptionDialog( exception, "Exception Dialog", "(ﾉಥ益ಥ）ﾉ\uFEFF ┻━┻ You broke it ლ(｀ー´ლ)", exception.getMessage() );
     }
 
-    public static void createExceptionDialog( Throwable exception, String dialogTitle, String dialogHeaderText, String dialogContentText )
+    public static void createExceptionDialog( Throwable exception, String title, String dialogHeaderText, String dialogContentText )
     {
         Alert alert = new Alert( Alert.AlertType.ERROR, dialogContentText, ButtonType.CLOSE);
-        alert.setTitle( dialogTitle );
+        alert.setTitle( title );
         alert.setHeaderText( dialogHeaderText );
 
         StringWriter stringWriter = new StringWriter();

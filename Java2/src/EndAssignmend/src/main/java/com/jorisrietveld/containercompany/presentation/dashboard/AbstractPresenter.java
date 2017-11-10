@@ -8,7 +8,7 @@ import com.jorisrietveld.containercompany.model.rental.RentalRepository;
  * Created: 17-10-2017 09:04
  * License: GPLv3 - General Public License version 3
  */
-public abstract class BaseController
+public abstract class AbstractPresenter
 {
     /**
      * The Container model.
@@ -23,7 +23,7 @@ public abstract class BaseController
     /**
      * Instantiates a new Base controller.
      */
-    public BaseController()
+    protected AbstractPresenter()
     {
         containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
         containerRepository.addContainer( ContainerRepository.ContainerType.NORMAL );

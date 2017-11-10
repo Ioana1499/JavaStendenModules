@@ -1,8 +1,8 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.container;
 
 import com.jorisrietveld.containercompany.model.container.ContainerRepository;
-import com.jorisrietveld.containercompany.presentation.dashboard.BaseController;
-import com.jorisrietveld.containercompany.presentation.util.AplicationDialog;
+import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
+import com.jorisrietveld.containercompany.presentation.util.DialogFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
  * Created: 07-11-2017 12:07
  * License: GPLv3 - General Public License version 3
  */
-public class AddContainerController extends BaseController implements Initializable
+public class AddContainerController extends AbstractPresenter implements Initializable
 {
 
     /**
@@ -91,7 +91,7 @@ public class AddContainerController extends BaseController implements Initializa
                     lengthSlider.getValue(),
                     heightSlider.getValue()
             );
-            AplicationDialog.createInfoDialog(
+            DialogFactory.createInfoDialog(
                     "Successfully added the Container",
                     "The container is successfully added to the Rental Model.",
                     "Click on OK to close this window."
@@ -103,7 +103,7 @@ public class AddContainerController extends BaseController implements Initializa
         }
         catch( IllegalArgumentException invalidArgument )
         {
-            AplicationDialog.createErrorDialog(
+            DialogFactory.createErrorDialog(
                     "Error while adding the container",
                     invalidArgument.getMessage(),
                     "Please correct the error and try again, click on OK to close this window."

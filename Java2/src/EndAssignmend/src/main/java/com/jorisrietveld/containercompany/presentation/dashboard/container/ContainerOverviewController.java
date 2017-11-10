@@ -1,6 +1,6 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.container;
 
-import com.jorisrietveld.containercompany.presentation.dashboard.BaseController;
+import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
  * Created: 17-10-2017 09:07
  * License: GPLv3 - General Public License version 3
  */
-public class ContainerOverviewController extends BaseController implements Initializable
+public class ContainerOverviewController extends AbstractPresenter implements Initializable
 {
     @FXML
 

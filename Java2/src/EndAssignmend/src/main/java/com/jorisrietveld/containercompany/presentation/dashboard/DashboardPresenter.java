@@ -7,13 +7,14 @@ import javafx.scene.control.TabPane;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
  * Created: 17-10-2017 12:31
  * License: GPLv3 - General Public License version 3
  */
-public class DashboardController extends BaseController
+public class DashboardPresenter extends AbstractPresenter
 {
     @FXML // Element that is used to hold all the tabs.
     private TabPane mainTabPane;
