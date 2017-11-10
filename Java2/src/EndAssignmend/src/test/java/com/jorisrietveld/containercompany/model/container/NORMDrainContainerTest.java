@@ -9,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created: 31-10-2017 03:14
  * License: GPLv3 - General Public License version 3
  */
-@DisplayName( "Normal Container test suite." )
+@DisplayName( "Tunnel Container test suite." )
 @Tag( "Container Test" )
-class NormalContainerTest
+class NORMDrainContainerTest
 {
-    NormalContainer container;
+    NORMDrainContainer container;
 
     @BeforeEach
     void setUp()
     {
-        container = new NormalContainer( 1 );
+        container = new NORMDrainContainer( 1 );
     }
 
     @AfterEach
@@ -27,7 +27,7 @@ class NormalContainerTest
         container = null;
     }
 
-    @DisplayName("Test correct normal container volume")
+    @DisplayName("Test correct container volume")
     @Test
     void testGetVolume()
     {
@@ -38,7 +38,7 @@ class NormalContainerTest
 
     }
 
-    @DisplayName("Test correct normal container prices")
+    @DisplayName("Test correct container prices")
     @Test
     void testGetPrices()
     {

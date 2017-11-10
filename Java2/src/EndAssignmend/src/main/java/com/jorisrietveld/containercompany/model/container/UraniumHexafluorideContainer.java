@@ -7,15 +7,15 @@ package com.jorisrietveld.containercompany.model.container;
  *
  * This data object is en specific type of container.
  */
-class NormalContainer extends Container
+class UraniumHexafluorideContainer extends Container implements NucliarContainerContract
 {
-    NormalContainer( int id )
+    UraniumHexafluorideContainer( int id )
     {
         super( id, 3, 6, 2 );
         this.containerTypeName = "Normal Container";
     }
 
-    NormalContainer( int id, double width, double length, double height )
+    UraniumHexafluorideContainer( int id, double width, double length, double height )
     {
         super( id, width, length, height);
     }

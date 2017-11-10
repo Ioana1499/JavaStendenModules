@@ -3,8 +3,8 @@ package com.jorisrietveld.containercompany.model.rental;
 import java.time.LocalDate;
 import java.util.*;
 
-import com.jorisrietveld.containercompany.model.StorageModel;
-import com.jorisrietveld.containercompany.model.container.ContainerModel;
+import com.jorisrietveld.containercompany.model.NonPersistingRepository;
+import com.jorisrietveld.containercompany.model.container.ContainerRepository;
 import com.jorisrietveld.containercompany.model.container.Container;
 
 /**
@@ -14,12 +14,12 @@ import com.jorisrietveld.containercompany.model.container.Container;
  * This class is contains the api for creating, storing, receiving Rentals. It is also used
  * for generating statistics about the stored containers.
  */
-public class RentalModel extends StorageModel<Rental>
+public class RentalRepository extends NonPersistingRepository<Rental> implements RentalRepositoryContract
 {
     /**
      * Instantiates a new Rental model.
      */
-    public RentalModel()
+    public RentalRepository()
     {
         super( new ArrayList<Rental>(  ) );
     }
@@ -27,27 +27,27 @@ public class RentalModel extends StorageModel<Rental>
     /**
      * Instantiates a new Rental model.
      *
-     * @param containerModel the container model
+     * @param containerRepository the container model
      */
-    public RentalModel( ContainerModel containerModel)
+    public RentalRepository( ContainerRepository containerRepository )
     {
         super( new ArrayList<Rental>( Arrays.asList(
-                new Rental( 1, LocalDate.of( 2017, 9, 10 ), LocalDate.of( 2017, 9, 15 ), containerModel.getById( 1 ) ),
-                new Rental( 2, LocalDate.of( 2017, 9, 16 ), LocalDate.of( 2017, 9, 20 ), containerModel.getById( 1 ) ),
-                new Rental( 3, LocalDate.of( 2017, 9, 5 ), LocalDate.of( 2017, 9, 12 ), containerModel.getById( 1 ) ),
-                new Rental( 4, LocalDate.of( 2017, 9, 16 ), LocalDate.of( 2017, 9, 18 ), containerModel.getById( 1 ) ),
-                new Rental( 5, LocalDate.of( 2017, 9, 19 ), LocalDate.of( 2017, 9, 30 ), containerModel.getById( 1 ) ),
-                new Rental( 6, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerModel.getById( 1 ) ),
-                new Rental( 7, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerModel.getById( 1 ) ),
-                new Rental( 6, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerModel.getById( 2 ) ),
-                new Rental( 7, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerModel.getById( 2 ) ),
-                new Rental( 8, LocalDate.of( 2017, 9, 3 ), LocalDate.of( 2017, 9, 7 ), containerModel.getById( 1 ) ),
-                new Rental( 9, LocalDate.of( 2017, 9, 9 ), LocalDate.of( 2017, 9, 14 ), containerModel.getById( 1 ) ),
-                new Rental( 10, LocalDate.of( 2017, 10, 5 ), LocalDate.of( 2017, 10, 7 ), containerModel.getById( 1 ) ),
-                new Rental( 8, LocalDate.of( 2017, 9, 3 ), LocalDate.of( 2017, 9, 7 ), containerModel.getById( 3 ) ),
-                new Rental( 9, LocalDate.of( 2017, 9, 9 ), LocalDate.of( 2017, 9, 14 ), containerModel.getById( 3 ) ),
-                new Rental( 10, LocalDate.of( 2017, 10, 5 ), LocalDate.of( 2017, 10, 7 ), containerModel.getById( 3) ),
-                new Rental( 11, LocalDate.of( 2017, 10, 10 ), LocalDate.of( 2017, 9, 16 ), containerModel.getById( 1 ) )
+                new Rental( 1, LocalDate.of( 2017, 9, 10 ), LocalDate.of( 2017, 9, 15 ), containerRepository.getById( 1 ) ),
+                new Rental( 2, LocalDate.of( 2017, 9, 16 ), LocalDate.of( 2017, 9, 20 ), containerRepository.getById( 1 ) ),
+                new Rental( 3, LocalDate.of( 2017, 9, 5 ), LocalDate.of( 2017, 9, 12 ), containerRepository.getById( 1 ) ),
+                new Rental( 4, LocalDate.of( 2017, 9, 16 ), LocalDate.of( 2017, 9, 18 ), containerRepository.getById( 1 ) ),
+                new Rental( 5, LocalDate.of( 2017, 9, 19 ), LocalDate.of( 2017, 9, 30 ), containerRepository.getById( 1 ) ),
+                new Rental( 6, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerRepository.getById( 1 ) ),
+                new Rental( 7, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerRepository.getById( 1 ) ),
+                new Rental( 6, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerRepository.getById( 2 ) ),
+                new Rental( 7, LocalDate.of( 2017, 10, 2 ), LocalDate.of( 2017, 10, 7 ), containerRepository.getById( 2 ) ),
+                new Rental( 8, LocalDate.of( 2017, 9, 3 ), LocalDate.of( 2017, 9, 7 ), containerRepository.getById( 1 ) ),
+                new Rental( 9, LocalDate.of( 2017, 9, 9 ), LocalDate.of( 2017, 9, 14 ), containerRepository.getById( 1 ) ),
+                new Rental( 10, LocalDate.of( 2017, 10, 5 ), LocalDate.of( 2017, 10, 7 ), containerRepository.getById( 1 ) ),
+                new Rental( 8, LocalDate.of( 2017, 9, 3 ), LocalDate.of( 2017, 9, 7 ), containerRepository.getById( 3 ) ),
+                new Rental( 9, LocalDate.of( 2017, 9, 9 ), LocalDate.of( 2017, 9, 14 ), containerRepository.getById( 3 ) ),
+                new Rental( 10, LocalDate.of( 2017, 10, 5 ), LocalDate.of( 2017, 10, 7 ), containerRepository.getById( 3) ),
+                new Rental( 11, LocalDate.of( 2017, 10, 10 ), LocalDate.of( 2017, 9, 16 ), containerRepository.getById( 1 ) )
                 )));
     }
 

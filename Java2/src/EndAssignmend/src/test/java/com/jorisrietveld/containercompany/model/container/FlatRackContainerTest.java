@@ -13,12 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @Tag( "Container Test" )
 class FlatRackContainerTest
 {
-    FlatRackContainer container;
+    SewageContainer container;
 
     @BeforeEach
     void setUp()
     {
-        container = new FlatRackContainer( 1 );
+        container = new SewageContainer( 1 );
     }
 
     @AfterEach

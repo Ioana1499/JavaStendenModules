@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * This class is the base model for all models that store entities.
  * @param <T> the model type parameter
  */
-public abstract class StorageModel<T extends Entity>
+public abstract class NonPersistingRepository<T extends Storable> implements Repository<T>
 {
     /**
      * The repository containing entities.
@@ -24,7 +24,7 @@ public abstract class StorageModel<T extends Entity>
      *
      * @param modelList the model list
      */
-    protected StorageModel( List<T> modelList )
+    protected NonPersistingRepository( List<T> modelList )
     {
         this.repository = modelList;
     }
@@ -34,7 +34,7 @@ public abstract class StorageModel<T extends Entity>
      *
      * @return the new unique id
      */
-    protected int getNewUniqueId()
+    public int getNewUniqueId()
     {
         return repository.stream().mapToInt( T::getId ).max()
                 .orElse( 0 ) + 1; // Get highest id +1
@@ -45,7 +45,7 @@ public abstract class StorageModel<T extends Entity>
      *
      * @param entity the new model
      */
-    protected void add( T entity )
+    public void add( T entity )
     {
         repository.stream().filter( e -> e.getId() == entity.getId() ).findFirst() // Find object with same id
                 .ifPresent( model -> { // If so throw exception.
@@ -87,7 +87,7 @@ public abstract class StorageModel<T extends Entity>
      * @param condition the condition the entity must match.
      * @return the entity
      */
-    protected List<T> getWhere( Predicate<T> condition )
+    public List<T> getWhere( Predicate<T> condition )
     {
         return repository.stream().filter( condition ).collect( Collectors.toList() );
     }
@@ -98,7 +98,7 @@ public abstract class StorageModel<T extends Entity>
      * @param condition the condition
      * @return the one where
      */
-    protected T getOneWhere( Predicate<T> condition )
+    public T getOneWhere( Predicate<T> condition )
     {
         return repository.stream().filter( condition ).findFirst().orElseGet( null );
     }
@@ -109,7 +109,7 @@ public abstract class StorageModel<T extends Entity>
      * @param condition the condition
      * @return the boolean
      */
-    protected boolean hasEntityWhere( Predicate<T> condition )
+    public boolean hasEntityWhere( Predicate<T> condition )
     {
         return repository.stream().anyMatch( condition );
     }

@@ -3,7 +3,7 @@ package com.jorisrietveld.containercompany.model.rental;
 import java.time.LocalDate;
 import java.time.Period;
 
-import com.jorisrietveld.containercompany.model.Entity;
+import com.jorisrietveld.containercompany.model.Storable;
 import com.jorisrietveld.containercompany.model.container.Container;
 
 /**
@@ -12,7 +12,7 @@ import com.jorisrietveld.containercompany.model.container.Container;
  * License: GPLv3 - General Public License version 3
  * This data object is represents an rental at the container company.
  */
-public class Rental implements Entity
+public class Rental implements Storable, RentalContract
 {
     private int rentalId;
     private LocalDate startDate;

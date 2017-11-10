@@ -1,6 +1,6 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.container;
 
-import com.jorisrietveld.containercompany.model.container.ContainerModel;
+import com.jorisrietveld.containercompany.model.container.ContainerRepository;
 import com.jorisrietveld.containercompany.presentation.dashboard.BaseController;
 import com.jorisrietveld.containercompany.presentation.util.AplicationDialog;
 import javafx.collections.FXCollections;
@@ -24,13 +24,13 @@ public class AddContainerController extends BaseController implements Initializa
     /**
      * The Container type observable list.
      */
-    ObservableList<ContainerModel.ContainerType> containerTypeObservableList;
+    ObservableList<ContainerRepository.ContainerType> containerTypeObservableList;
 
     /**
      * The Container type choice box.
      */
     @FXML
-    ChoiceBox<ContainerModel.ContainerType> containerTypeChoiceBox;
+    ChoiceBox<ContainerRepository.ContainerType> containerTypeChoiceBox;
 
     /**
      * The Width slider.
@@ -70,7 +70,7 @@ public class AddContainerController extends BaseController implements Initializa
     private void initializeContainerTypeChoiceBox()
     {
         this.containerTypeObservableList = FXCollections.observableArrayList(
-                ContainerModel.ContainerType.values()
+                ContainerRepository.ContainerType.values()
         );
 
         containerTypeChoiceBox.setItems( this.containerTypeObservableList );
@@ -85,7 +85,7 @@ public class AddContainerController extends BaseController implements Initializa
     {
         try
         {
-            containerModel.addContainer(
+            containerRepository.addContainer(
                     containerTypeChoiceBox.getValue(),
                     widthSlider.getValue(),
                     lengthSlider.getValue(),

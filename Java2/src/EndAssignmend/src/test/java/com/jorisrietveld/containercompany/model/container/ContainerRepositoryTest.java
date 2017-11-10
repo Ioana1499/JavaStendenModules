@@ -1,13 +1,11 @@
 package com.jorisrietveld.containercompany.model.container;
 
-import static com.jorisrietveld.containercompany.model.container.ContainerModel.ContainerType;
+import static com.jorisrietveld.containercompany.model.container.ContainerRepository.ContainerType;
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.runners.Suite;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,21 +16,21 @@ import java.util.List;
  * Created: 30-10-2017 18:28
  * License: GPLv3 - General Public License version 3
  * Test suit for the container model.
- * It it also tests all the container entity classes and the super class StorageModel are behaving properly.
+ * It it also tests all the container entity classes and the super class NonPersistingRepository are behaving properly.
  */
 @DisplayName( "Container Model test suite." )
 @Tag( "Container Test" )
-class ContainerModelTest
+class ContainerRepositoryTest
 {
     List<Container> testContainers = new ArrayList<>( new ArrayList<Container>( Arrays.asList(
-            new TunnelContainer( 1 ),
-            new NormalContainer( 2 ),
-            new FlatRackContainer( 3 ),
-            new TunnelContainer( 4 ),
-            new NormalContainer( 5 ),
-            new NormalContainer( 6 )
+            new NORMDrainContainer( 1 ),
+            new UraniumHexafluorideContainer( 2 ),
+            new SewageContainer( 3 ),
+            new NORMDrainContainer( 4 ),
+            new UraniumHexafluorideContainer( 5 ),
+            new UraniumHexafluorideContainer( 6 )
     ) ) );
-    ContainerModel model;
+    ContainerRepository model;
 
     /**
      * Test the initiation of the container model.
@@ -41,7 +39,7 @@ class ContainerModelTest
     @Test
     void testInit()
     {
-        ContainerModel model = new ContainerModel();
+        ContainerRepository model = new ContainerRepository();
 
         assertTrue( model.getAll().isEmpty() );
     }
@@ -53,7 +51,7 @@ class ContainerModelTest
     @Test
     void testAddContainer()
     {
-        ContainerModel model = new ContainerModel();
+        ContainerRepository model = new ContainerRepository();
         Container newContainer = model.addContainer( ContainerType.FLAT_RACK );
         Container newContainer2 = model.addContainer( ContainerType.NORMAL );
 
@@ -71,7 +69,7 @@ class ContainerModelTest
     @Test
     void testAverageContainerVolume()
     {
-        ContainerModel model = new ContainerModel();
+        ContainerRepository model = new ContainerRepository();
         Container containerNormal = model.addContainer( ContainerType.NORMAL );
         Container containerHalfHeight = model.addContainer( ContainerType.HALF_HEIGHT );
 

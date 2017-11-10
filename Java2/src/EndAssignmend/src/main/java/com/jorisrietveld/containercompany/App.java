@@ -14,7 +14,6 @@ import javafx.scene.layout.Priority;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -25,8 +24,6 @@ import java.io.StringWriter;
 public class App extends Application
 {
     private Stage primaryStage; // The primary window.
-    private Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds(); // To get the screen dimensions.
-    // private Preferences userPreferences = Preferences.userRoot().node( "/container/company" ); // Load user preferences.
 
     /**
      * This is the main access point of the Graphical container company application.

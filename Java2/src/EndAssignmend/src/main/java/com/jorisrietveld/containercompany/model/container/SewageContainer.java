@@ -7,21 +7,21 @@ package com.jorisrietveld.containercompany.model.container;
  *
  * This data object is en specific type of container.
  */
-class FlatRackContainer extends Container
+class SewageContainer extends Container implements LiquidContainerContract
 {
     /**
      * Create an new standard Flat Rack container.
      *
      * @param id The id of the container.
      */
-    FlatRackContainer( int id )
+    SewageContainer( int id )
     {
         super( id, 2.50, 6, 1.50 );
         this.setRentM3( 35 );
         this.containerTypeName = "Flat Rack Container";
     }
 
-    FlatRackContainer( int id, double width, double length, double height )
+    SewageContainer( int id, double width, double length, double height )
     {
         super( id, width, length, height);
     }

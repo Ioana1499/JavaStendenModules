@@ -1,6 +1,6 @@
 package com.jorisrietveld.containercompany.model.container;
 
-import com.jorisrietveld.containercompany.model.Entity;
+import com.jorisrietveld.containercompany.model.Storable;
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
  * Created: 15-10-2017 19:46
@@ -8,16 +8,21 @@ import com.jorisrietveld.containercompany.model.Entity;
  *
  * This is the base class of every container.
  */
-public abstract class Container implements Entity
+public abstract class Container implements Storable, ContainerContract
 {
     /**
      * The Rent of the container in cubic meters.
      */
     protected double rentM3 = 40;
+    //protected double rentPricePerCubicMeter;
+    //protected double transportationCost;
+
     /**
      * The Removal cost of the container for an volume under 2 cubic meters
      */
     protected double removalCostUnder2m3 = 60;
+    protected double transportationCost;
+
     /**
      * The Removal cost of the container.
      */

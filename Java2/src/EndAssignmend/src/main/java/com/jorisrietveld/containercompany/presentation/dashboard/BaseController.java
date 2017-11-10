@@ -1,20 +1,7 @@
 package com.jorisrietveld.containercompany.presentation.dashboard;
 
-import com.jorisrietveld.containercompany.model.container.ContainerModel;
-import com.jorisrietveld.containercompany.model.rental.RentalModel;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.util.StringConverter;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
+import com.jorisrietveld.containercompany.model.container.ContainerRepository;
+import com.jorisrietveld.containercompany.model.rental.RentalRepository;
 
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
@@ -26,25 +13,25 @@ public abstract class BaseController
     /**
      * The Container model.
      */
-    protected ContainerModel containerModel = new ContainerModel();
+    protected ContainerRepository containerRepository = new ContainerRepository();
 
     /**
      * The Rental model.
      */
-    protected RentalModel rentalModel;
+    protected RentalRepository rentalRepository;
 
     /**
      * Instantiates a new Base controller.
      */
     public BaseController()
     {
-        containerModel.addContainer( ContainerModel.ContainerType.FLAT_RACK );
-        containerModel.addContainer( ContainerModel.ContainerType.NORMAL );
-        containerModel.addContainer( ContainerModel.ContainerType.FLAT_RACK );
-        containerModel.addContainer( ContainerModel.ContainerType.HALF_HEIGHT );
-        containerModel.addContainer( ContainerModel.ContainerType.TUNNEL );
-        containerModel.addContainer( ContainerModel.ContainerType.TUNNEL );
-        rentalModel = new RentalModel( containerModel );
+        containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
+        containerRepository.addContainer( ContainerRepository.ContainerType.NORMAL );
+        containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
+        containerRepository.addContainer( ContainerRepository.ContainerType.HALF_HEIGHT );
+        containerRepository.addContainer( ContainerRepository.ContainerType.TUNNEL );
+        containerRepository.addContainer( ContainerRepository.ContainerType.TUNNEL );
+        rentalRepository = new RentalRepository( containerRepository );
     }
 
 }

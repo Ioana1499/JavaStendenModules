@@ -2,7 +2,8 @@ package com.jorisrietveld.containercompany.model.container;
 
 import java.util.*;
 
-import com.jorisrietveld.containercompany.model.StorageModel;
+import com.jorisrietveld.containercompany.model.NonPersistingRepository;
+
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
  * Created: 30-10-2017 12:00
@@ -11,7 +12,7 @@ import com.jorisrietveld.containercompany.model.StorageModel;
  * This class is contains the api for creating, storing, receiving Containers. It is also used
  * for generating statistics about the stored containers.
  */
-public class ContainerModel extends StorageModel<Container>
+public class ContainerRepository extends NonPersistingRepository<Container> implements ContainerRepositoryContract
 {
     /**
      * The enum containing all types of containers that are available.
@@ -38,11 +39,11 @@ public class ContainerModel extends StorageModel<Container>
     /**
      * Instantiates a new Container model.
      */
-    public ContainerModel( List<Container> containers )
+    public ContainerRepository( List<Container> containers )
     {
         super( containers );
     }
-    public ContainerModel()
+    public ContainerRepository()
     {
         super( new ArrayList<Container>() );
     }
@@ -63,6 +64,16 @@ public class ContainerModel extends StorageModel<Container>
     /**
      * Add an new container to the company.
      *
+     * @param container the container to add.
+     */
+    public Container addContainer( Container container )
+    {
+       return this.addContainer( container );
+    }
+
+    /**
+     * Add an new container to the company.
+     *
      * @param type the type
      */
     public Container addContainer( ContainerType type )
@@ -71,16 +82,16 @@ public class ContainerModel extends StorageModel<Container>
         switch( type )
         {
             case NORMAL:
-                newContainer = new NormalContainer( getNewUniqueId() );
+                newContainer = new UraniumHexafluorideContainer( getNewUniqueId() );
                 break;
             case TUNNEL:
-                newContainer = new TunnelContainer( getNewUniqueId() );
+                newContainer = new NORMDrainContainer( getNewUniqueId() );
                 break;
             case FLAT_RACK:
-                newContainer = new FlatRackContainer( getNewUniqueId() );
+                newContainer = new SewageContainer( getNewUniqueId() );
                 break;
             case HALF_HEIGHT:
-                newContainer =new HalfHeightContainer( getNewUniqueId() );
+                newContainer =new DryCaskStorageContainer( getNewUniqueId() );
                 break;
             default:
                 throw new IllegalArgumentException("Container type not implemented.");
@@ -99,16 +110,16 @@ public class ContainerModel extends StorageModel<Container>
         switch( type )
         {
             case NORMAL:
-                newContainer = new NormalContainer( getNewUniqueId(), width, length, height );
+                newContainer = new UraniumHexafluorideContainer( getNewUniqueId(), width, length, height );
                 break;
             case TUNNEL:
-                newContainer = new TunnelContainer( getNewUniqueId(), width, length, height );
+                newContainer = new NORMDrainContainer( getNewUniqueId(), width, length, height );
                 break;
             case FLAT_RACK:
-                newContainer = new FlatRackContainer( getNewUniqueId(), width, length, height );
+                newContainer = new SewageContainer( getNewUniqueId(), width, length, height );
                 break;
             case HALF_HEIGHT:
-                newContainer =new HalfHeightContainer( getNewUniqueId(), width, length, height );
+                newContainer =new DryCaskStorageContainer( getNewUniqueId(), width, length, height );
                 break;
             default:
                 throw new IllegalArgumentException("Container type not implemented.");

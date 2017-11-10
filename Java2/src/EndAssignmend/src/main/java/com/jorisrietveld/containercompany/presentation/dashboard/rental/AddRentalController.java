@@ -81,7 +81,7 @@ public class AddRentalController extends BaseController implements Initializable
      */
     private void fetchContainerData()
     {
-        for( Iterator<Container> iterator = this.containerModel.getAll().iterator(); iterator.hasNext(); )
+        for( Iterator<Container> iterator = this.containerRepository.getAll().iterator(); iterator.hasNext(); )
         {
             Container container = iterator.next();
             this.choicesObservableList.add( new ContainerChoice( container.getId(), container.toString() ) );
@@ -103,7 +103,7 @@ public class AddRentalController extends BaseController implements Initializable
     private void fetchRecentRentalData()
     {
         this.recentRentalsObservebleList = FXCollections.observableList(
-                this.rentalModel.getRentalsByContainerId( containerChoiceBox.getValue().id )
+                this.rentalRepository.getRentalsByContainerId( containerChoiceBox.getValue().id )
         );
     }
 
@@ -117,7 +117,7 @@ public class AddRentalController extends BaseController implements Initializable
         fetchRecentRentalData();
         if( containerChoiceBox.getValue() != null )
         {
-            List<Rental> recentRentals = this.rentalModel.getRentalsByContainerId( containerChoiceBox.getValue().id );
+            List<Rental> recentRentals = this.rentalRepository.getRentalsByContainerId( containerChoiceBox.getValue().id );
             recentRentalListView.setItems( FXCollections.observableList( recentRentals ) );
         }
     }
@@ -145,7 +145,7 @@ public class AddRentalController extends BaseController implements Initializable
     {
         try
         {
-            rentalModel.addRental( datePickerStart.getValue(), getDatePickerEnd.getValue(), containerModel.getById( containerChoiceBox.getValue().id ));
+            rentalRepository.addRental( datePickerStart.getValue(), getDatePickerEnd.getValue(), containerRepository.getById( containerChoiceBox.getValue().id ));
             AplicationDialog.createInfoDialog(
                     "Successfully added the Rental",
                     "The rental is successfully added to the Rental Model.",

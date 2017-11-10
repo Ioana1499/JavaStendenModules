@@ -6,19 +6,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
- * Created: 31-10-2017 03:14
+ * Created: 31-10-2017 03:13
  * License: GPLv3 - General Public License version 3
  */
-@DisplayName( "Tunnel Container test suite." )
+@DisplayName( "Half Height Container test suite." )
 @Tag( "Container Test" )
-class TunnelContainerTest
+class DryCaskStorageContainerTest
 {
-    TunnelContainer container;
+    DryCaskStorageContainer container;
 
     @BeforeEach
     void setUp()
     {
-        container = new TunnelContainer( 1 );
+        container = new DryCaskStorageContainer( 1 );
     }
 
     @AfterEach
@@ -27,18 +27,18 @@ class TunnelContainerTest
         container = null;
     }
 
-    @DisplayName("Test correct container volume")
+    @DisplayName("Test correct half height container volume")
     @Test
     void testGetVolume()
     {
-        assertEquals( container.getWidth() * container.getLength() * container.getHeight(),
+        assertEquals( (container.getWidth() * container.getLength() * container.getHeight()),
                 container.getVolume(),
                 "The wrong volume is returned."
         );
 
     }
 
-    @DisplayName("Test correct container prices")
+    @DisplayName("Test correct half height container prices")
     @Test
     void testGetPrices()
     {

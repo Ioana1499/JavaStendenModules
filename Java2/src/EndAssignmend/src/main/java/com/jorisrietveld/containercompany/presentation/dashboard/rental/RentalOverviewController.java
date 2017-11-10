@@ -11,7 +11,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 /**
@@ -93,7 +92,7 @@ public class RentalOverviewController extends BaseController implements Initiali
      */
     private void fetchRentalData()
     {
-        this.rentalObservableList.addAll( this.rentalModel.getAll() );
+        this.rentalObservableList.addAll( this.rentalRepository.getAll() );
     }
 
     /**

@@ -5,9 +5,9 @@ package com.jorisrietveld.containercompany.model;
  * Created: 30-10-2017 13:43
  * License: GPLv3 - General Public License version 3
  *
- * The interface for all data objects.
+ * The contract for all repository storeable data objects.
  */
-public interface Entity
+public interface Storable
 {
     /**
      * Get the unique identification code of an entity.

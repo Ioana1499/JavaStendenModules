@@ -13,14 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created: 30-10-2017 18:29
  * License: GPLv3 - General Public License version 3
  * Test suit for the rental model.
- * It it also tests the rental entity class and the super class StorageModel are behaving properly.
+ * It it also tests the rental entity class and the super class NonPersistingRepository are behaving properly.
  */
 @DisplayName( "Rental model test suite" )
 @Tag( "Rental Tests" )
-public class RentalModelTest
+public class RentalRepositoryTest
 {
-    ContainerModel containerModel;
-    RentalModel rentalModel;
+    ContainerRepository containerRepository;
+    RentalRepository rentalRepository;
 
     /**
      * Initiate an new rental model with an container model before each test.
@@ -28,15 +28,15 @@ public class RentalModelTest
     @BeforeEach
     void setUp()
     {
-        this.containerModel = new ContainerModel();
-        containerModel.addContainer( ContainerModel.ContainerType.FLAT_RACK );
-        containerModel.addContainer( ContainerModel.ContainerType.NORMAL );
-        containerModel.addContainer( ContainerModel.ContainerType.FLAT_RACK );
-        containerModel.addContainer( ContainerModel.ContainerType.HALF_HEIGHT );
-        containerModel.addContainer( ContainerModel.ContainerType.TUNNEL );
-        containerModel.addContainer( ContainerModel.ContainerType.TUNNEL );
+        this.containerRepository = new ContainerRepository();
+        containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
+        containerRepository.addContainer( ContainerRepository.ContainerType.NORMAL );
+        containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
+        containerRepository.addContainer( ContainerRepository.ContainerType.HALF_HEIGHT );
+        containerRepository.addContainer( ContainerRepository.ContainerType.TUNNEL );
+        containerRepository.addContainer( ContainerRepository.ContainerType.TUNNEL );
 
-        this.rentalModel = new RentalModel( this.containerModel );
+        this.rentalRepository = new RentalRepository( this.containerRepository );
 
     }
 
@@ -46,8 +46,8 @@ public class RentalModelTest
     @AfterEach
     void tearDown()
     {
-        this.containerModel = null;
-        this.rentalModel = null;
+        this.containerRepository = null;
+        this.rentalRepository = null;
     }
 
     /**
@@ -57,19 +57,19 @@ public class RentalModelTest
     @Test
     void testAddRental()
     {
-        Rental rental = this.rentalModel.addRental(
+        Rental rental = this.rentalRepository.addRental(
                 LocalDate.now(),
                 LocalDate.now().plusDays( 1 ),
-                containerModel.getById( 1 )
+                containerRepository.getById( 1 )
         );
-        Rental rental2 = this.rentalModel.addRental(
+        Rental rental2 = this.rentalRepository.addRental(
                 LocalDate.now(),
                 LocalDate.now().plusDays( 1 ),
-                containerModel.getById( 2 )
+                containerRepository.getById( 2 )
         );
 
-        assertSame( this.rentalModel.getById( rental.getId() ), rental );
-        assertNotSame( this.rentalModel.getById( rental.getId() ), rental2 );
+        assertSame( this.rentalRepository.getById( rental.getId() ), rental );
+        assertNotSame( this.rentalRepository.getById( rental.getId() ), rental2 );
     }
 
     /**
@@ -80,19 +80,19 @@ public class RentalModelTest
     void testAddIncorrectPeriodRental()
     {
         Throwable exception = assertThrows( IllegalArgumentException.class, () -> {
-            this.rentalModel.addRental(
+            this.rentalRepository.addRental(
                     LocalDate.now(),
                     LocalDate.now().minusDays( 1 ),
-                    this.containerModel.getById( 1 )
+                    this.containerRepository.getById( 1 )
             );
         } );
         assertEquals( "Invalid rental period selected, the start date can not be before the end date.", exception.getMessage() );
 
         Throwable exception2 = assertThrows( IllegalArgumentException.class, () -> {
-            this.rentalModel.addRental(
+            this.rentalRepository.addRental(
                     LocalDate.now(),
                     LocalDate.now().minusDays( 1 ),
-                    this.containerModel.getById( 1 )
+                    this.containerRepository.getById( 1 )
             );
         } );
         assertEquals( "Invalid rental period selected, the start date can not be before the end date.", exception2.getMessage() );
@@ -105,43 +105,43 @@ public class RentalModelTest
     @Test
     void testAddIntersectingPeriodRental()
     {
-        this.rentalModel.addRental(
+        this.rentalRepository.addRental(
                 LocalDate.now(),
                 LocalDate.now().plusDays( 3 ),
-                containerModel.getById( 1 )
+                containerRepository.getById( 1 )
         );
 
         // Test complete overlapping rental.
-        Throwable exception = assertThrows( IllegalArgumentException.class, () -> this.rentalModel.addRental(
+        Throwable exception = assertThrows( IllegalArgumentException.class, () -> this.rentalRepository.addRental(
                 LocalDate.now(),
                 LocalDate.now().plusDays( 3 ),
-                containerModel.getById( 1 )
+                containerRepository.getById( 1 )
         ) );
         assertEquals( "Invalid rental period, the container is already rented in this period.", exception.getMessage() );
 
         // Test intersecting at beginning
-        Throwable exception2 = assertThrows( IllegalArgumentException.class, () -> this.rentalModel.addRental(
+        Throwable exception2 = assertThrows( IllegalArgumentException.class, () -> this.rentalRepository.addRental(
                 LocalDate.now().minusDays( 2 ),
                 LocalDate.now().plusDays( 1 ),
-                containerModel.getById( 1 )
+                containerRepository.getById( 1 )
         ) );
         assertEquals( "Invalid rental period, the container is already rented in this period.", exception2.getMessage() );
 
         // Test intersecting at end
-        Throwable exception3 = assertThrows( IllegalArgumentException.class, () -> this.rentalModel.addRental(
+        Throwable exception3 = assertThrows( IllegalArgumentException.class, () -> this.rentalRepository.addRental(
                 LocalDate.now().plusDays( 2 ),
                 LocalDate.now().plusDays( 5 ),
-                containerModel.getById( 1 )
+                containerRepository.getById( 1 )
         ) );
         assertEquals( "Invalid rental period, the container is already rented in this period.", exception3.getMessage() );
 
         // Test overlapping but different container.
         try
         {
-            this.rentalModel.addRental(
+            this.rentalRepository.addRental(
                     LocalDate.now(),
                     LocalDate.now().plusDays( 3 ),
-                    containerModel.getById( 2 )
+                    containerRepository.getById( 2 )
             );
         }
         catch( IllegalArgumentException ex )
@@ -157,9 +157,9 @@ public class RentalModelTest
     @Test
     void testGetRentPrice()
     {
-        Container someContainer = this.containerModel.getById( 1 );
+        Container someContainer = this.containerRepository.getById( 1 );
         int rentDays = 2;
-        Rental rental1 = this.rentalModel.addRental(
+        Rental rental1 = this.rentalRepository.addRental(
                 LocalDate.now(),
                 LocalDate.now().plusDays( rentDays ),
                 someContainer
@@ -179,20 +179,20 @@ public class RentalModelTest
     @Test
     void testGetTotalRevenue()
     {
-        this.rentalModel = new RentalModel();
-        Container someContainer = containerModel.getById( 1 );
+        this.rentalRepository = new RentalRepository();
+        Container someContainer = containerRepository.getById( 1 );
 
-        Rental rental1 = this.rentalModel.addRental(
+        Rental rental1 = this.rentalRepository.addRental(
                 LocalDate.now(),
                 LocalDate.now().plusDays( 1 ),
                 someContainer
         );
-        Rental rental2 = this.rentalModel.addRental(
+        Rental rental2 = this.rentalRepository.addRental(
                 LocalDate.now().plusDays( 2 ),
                 LocalDate.now().plusDays( 3 ),
                 someContainer
         );
-        Rental rental3 = this.rentalModel.addRental(
+        Rental rental3 = this.rentalRepository.addRental(
                 LocalDate.now().plusDays( 4 ),
                 LocalDate.now().plusDays( 5 ),
                 someContainer
@@ -201,12 +201,12 @@ public class RentalModelTest
         double rentPrice = someContainer.getRentPrice() * 3 + someContainer.getRemovalCost() * 3;
         assertEquals(
                 rentPrice,
-                this.rentalModel.getTotalRevenue(),
+                this.rentalRepository.getTotalRevenue(),
                 "Incorrect total revenue returned."
         );
         assertEquals(
                 rentPrice,
-                this.rentalModel.getTotalRevenue( someContainer.getId() ),
+                this.rentalRepository.getTotalRevenue( someContainer.getId() ),
                 "Incorrect total revenue returned for an specific container."
         );
     }
@@ -218,8 +218,8 @@ public class RentalModelTest
     @Test
     void testGetTotalRevenueRange()
     {
-        this.rentalModel = new RentalModel();
-        Container someContainer = containerModel.getById( 1 );
+        this.rentalRepository = new RentalRepository();
+        Container someContainer = containerRepository.getById( 1 );
 
         LocalDate startDate = LocalDate.now();
         LocalDate endDate = LocalDate.now().plusDays( 1 );
@@ -228,17 +228,17 @@ public class RentalModelTest
         LocalDate thirdStartDate = LocalDate.now().plusDays( 4 );
         LocalDate thirdEndDate = LocalDate.now().plusDays( 5 );
 
-        Rental rental1 = this.rentalModel.addRental(
+        Rental rental1 = this.rentalRepository.addRental(
                 startDate,
                 endDate,
                 someContainer
         );
-        Rental rental2 = this.rentalModel.addRental(
+        Rental rental2 = this.rentalRepository.addRental(
                 secondStartDate,
                 secondEndDate,
                 someContainer
         );
-        Rental rental3 = this.rentalModel.addRental(
+        Rental rental3 = this.rentalRepository.addRental(
                 thirdStartDate,
                 thirdEndDate,
                 someContainer
@@ -249,12 +249,12 @@ public class RentalModelTest
 
         assertEquals(
                 removePrice + rentPrice * startDate.until( endDate ).getDays(),
-                this.rentalModel.getTotalRevenue( startDate, endDate ),
+                this.rentalRepository.getTotalRevenue( startDate, endDate ),
                 "Incorrect total revenue for 1 day returned."
         );
         assertEquals(
-                this.rentalModel.getRentals( startDate, secondEndDate ).stream().mapToDouble( Rental::getTotalPrice ).sum(),
-                this.rentalModel.getTotalRevenue( startDate, secondEndDate ),
+                this.rentalRepository.getRentals( startDate, secondEndDate ).stream().mapToDouble( Rental::getTotalPrice ).sum(),
+                this.rentalRepository.getTotalRevenue( startDate, secondEndDate ),
                 "Incorrect total revenue for 2 day returned."
         );
     }
@@ -266,39 +266,39 @@ public class RentalModelTest
     @Test
     void testGetRentalsOnDate()
     {
-        this.rentalModel = new RentalModel();
-        Container someContainer = containerModel.getById( 1 );
-        Container someOtherContainer = containerModel.getById( 2 );
+        this.rentalRepository = new RentalRepository();
+        Container someContainer = containerRepository.getById( 1 );
+        Container someOtherContainer = containerRepository.getById( 2 );
 
         LocalDate startDate = LocalDate.now();
         LocalDate endDate = LocalDate.now().plusDays( 1 );
         LocalDate secondStartDate = LocalDate.now().plusDays( 2 );
         LocalDate secondEndDate = LocalDate.now().plusDays( 3 );
 
-        Rental rental1 = this.rentalModel.addRental(
+        Rental rental1 = this.rentalRepository.addRental(
                 startDate,
                 endDate,
                 someContainer
         );
-        Rental rental2 = this.rentalModel.addRental(
+        Rental rental2 = this.rentalRepository.addRental(
                 secondStartDate,
                 secondEndDate,
                 someContainer
         );
 
         assertSame( rental1,
-                this.rentalModel.getRentals( startDate ).get( 0 ),
+                this.rentalRepository.getRentals( startDate ).get( 0 ),
                 "Incorrect rental returned."
         );
 
-        Rental rental3 = this.rentalModel.addRental(
+        Rental rental3 = this.rentalRepository.addRental(
                 startDate,
                 endDate,
                 someOtherContainer
         );
 
         assertEquals(2,
-                this.rentalModel.getRentals( startDate ).size(),
+                this.rentalRepository.getRentals( startDate ).size(),
                 "Incorrect number of rentals returned."
         );
 

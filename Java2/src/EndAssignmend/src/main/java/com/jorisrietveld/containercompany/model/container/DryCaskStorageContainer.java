@@ -7,9 +7,9 @@ package com.jorisrietveld.containercompany.model.container;
  *
  * This data object is en specific type of container.
  */
-class HalfHeightContainer extends Container
+class DryCaskStorageContainer extends Container implements NucliarContainerContract
 {
-    HalfHeightContainer( int id )
+    DryCaskStorageContainer( int id )
     {
         super( id, 3, 6, 1 );
         this.setRemovalCost( this.getRemovalCost() / 2 );
@@ -18,7 +18,7 @@ class HalfHeightContainer extends Container
         this.containerTypeName = "Half Height Container";
     }
 
-    HalfHeightContainer( int id, double width, double length, double height )
+    DryCaskStorageContainer( int id, double width, double length, double height )
     {
         super( id, width, length, height);
     }
