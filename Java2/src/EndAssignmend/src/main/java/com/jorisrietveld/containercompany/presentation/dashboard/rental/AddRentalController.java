@@ -1,7 +1,9 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.rental;
 
+import com.jorisrietveld.containercompany.model.Storable;
 import com.jorisrietveld.containercompany.model.container.Container;
 import com.jorisrietveld.containercompany.model.rental.Rental;
+import com.jorisrietveld.containercompany.model.rental.RentalContract;
 import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
 import com.jorisrietveld.containercompany.presentation.util.DialogFactory;
 import com.jorisrietveld.containercompany.presentation.util.DateConverter;

@@ -35,6 +35,9 @@ public class Rental implements Storable, RentalContract
         this.rentalId = rentalId;
     }
 
+    public Rental()
+    {}
+
     /**
      * This method checks if an certain date falls inside the rental period of this rental.
      *

@@ -1,6 +1,9 @@
 package com.jorisrietveld.containercompany.model.container;
 
 import com.jorisrietveld.containercompany.model.Storable;
+
+import java.util.Hashtable;
+
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
  * Created: 15-10-2017 19:46
@@ -10,6 +13,44 @@ import com.jorisrietveld.containercompany.model.Storable;
  */
 public abstract class Container implements Storable, ContainerContract
 {
+    private int containerId = 0;
+    private Hashtable<Double,Double> rentPrices = new Hashtable<Double, Double>(){{
+
+    }};
+    private double width = 2;
+    private double length = 5;
+    private double height = 2;
+    private double transportCost = 25.50;
+    private double maximumWeight = ;
+    private double emptyWeight;
+    private double weightPerUnit;
+    private double content;
+
+    public Container( int containerId, Hashtable<Double, Double> rentPrices, double width, double length, double height, double transportCost, double maximumWeight, double emptyWeight, double weightPerUnit )
+    {
+        this.containerId = containerId;
+        this.rentPrices = rentPrices;
+        this.width = width;
+        this.length = length;
+        this.height = height;
+        this.transportCost = transportCost;
+        this.maximumWeight = maximumWeight;
+        this.emptyWeight = emptyWeight;
+        this.weightPerUnit = weightPerUnit;
+        this.content = 0;
+    }
+
+    public Container()
+    {
+        this.width = width;
+        this.length = length;
+        this.height = height;
+        this.transportCost = 30;
+        this.maximumWeight = 500;
+        this.emptyWeight = emptyWeight;
+        this.contentsWeight = 0;
+    }
+
     /**
      * The Rent of the container in cubic meters.
      */

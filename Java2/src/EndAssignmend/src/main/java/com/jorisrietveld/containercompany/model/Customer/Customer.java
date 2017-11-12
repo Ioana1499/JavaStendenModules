@@ -36,6 +36,8 @@ abstract class Customer implements Storable
         this.address = address;
     }
 
+    public Customer(){}
+
     @Override
     public int getId()
     {

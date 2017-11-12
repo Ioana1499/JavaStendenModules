@@ -1,7 +1,19 @@
 package com.jorisrietveld.containercompany.presentation.dashboard;
 
+import com.jorisrietveld.containercompany.model.Repository;
+import com.jorisrietveld.containercompany.model.Storable;
+import com.jorisrietveld.containercompany.model.container.ContainerContract;
 import com.jorisrietveld.containercompany.model.container.ContainerRepository;
+import com.jorisrietveld.containercompany.model.rental.Rental;
 import com.jorisrietveld.containercompany.model.rental.RentalRepository;
+import com.jorisrietveld.containercompany.presentation.dashboard.rental.AddRentalController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
@@ -33,5 +45,4 @@ public abstract class AbstractPresenter
         containerRepository.addContainer( ContainerRepository.ContainerType.TUNNEL );
         rentalRepository = new RentalRepository( containerRepository );
     }
-
 }

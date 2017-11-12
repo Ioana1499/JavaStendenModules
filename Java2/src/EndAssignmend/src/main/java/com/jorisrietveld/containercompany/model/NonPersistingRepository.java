@@ -92,6 +92,7 @@ public abstract class NonPersistingRepository<T extends Storable> implements Rep
         return repository.stream().filter( condition ).collect( Collectors.toList() );
     }
 
+
     /**
      * Gets one entity where.
      *
@@ -104,7 +105,7 @@ public abstract class NonPersistingRepository<T extends Storable> implements Rep
     }
 
     /**
-     * Has model where boolean.
+     * Has model where condition is true.
      *
      * @param condition the condition
      * @return the boolean
