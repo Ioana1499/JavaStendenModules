@@ -1,6 +1,6 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.container;
 
-import com.jorisrietveld.containercompany.model.container.ContainerRepository;
+import com.jorisrietveld.containercompany.business.container.ContainerRepository;
 import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
 import com.jorisrietveld.containercompany.presentation.util.DialogFactory;
 import javafx.collections.FXCollections;
@@ -80,7 +80,7 @@ public class AddContainerController extends AbstractPresenter implements Initial
     /**
      * Attempt to add an new container.
      */
-    @FXML // This action inserts an new container into the storage model.
+    @FXML // This action inserts an new container into the storage business.
     private void addContainer()
     {
         try

@@ -1,9 +1,7 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.rental;
 
-import com.jorisrietveld.containercompany.model.Storable;
-import com.jorisrietveld.containercompany.model.container.Container;
-import com.jorisrietveld.containercompany.model.rental.Rental;
-import com.jorisrietveld.containercompany.model.rental.RentalContract;
+import com.jorisrietveld.containercompany.business.container.Container;
+import com.jorisrietveld.containercompany.business.rental.Rental;
 import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
 import com.jorisrietveld.containercompany.presentation.util.DialogFactory;
 import com.jorisrietveld.containercompany.presentation.util.DateConverter;
@@ -65,7 +63,7 @@ public class AddRentalController extends AbstractPresenter implements Initializa
 
     /**
      * Initialize the container choice box and add containers to choose from with data fetched
-     * from the Container storage model.
+     * from the Container storage business.
      */
     private void initializeContainerChoiceBox()
     {
@@ -78,7 +76,7 @@ public class AddRentalController extends AbstractPresenter implements Initializa
     }
 
     /**
-     * Fetch container records from the storage model and inject it into the choice box element for
+     * Fetch container records from the storage business and inject it into the choice box element for
      * choosing an container to rent.
      */
     private void fetchContainerData()
@@ -91,7 +89,7 @@ public class AddRentalController extends AbstractPresenter implements Initializa
     }
 
     /**
-     * Update the container choice box with container choices from the storage model.
+     * Update the container choice box with container choices from the storage business.
      */
     private void updateContainerChoiceBox()
     {
@@ -100,7 +98,7 @@ public class AddRentalController extends AbstractPresenter implements Initializa
     }
 
     /**
-     * Fetch recent rental records from the storage model from the currently selected container.
+     * Fetch recent rental records from the storage business from the currently selected container.
      */
     private void fetchRecentRentalData()
     {
@@ -111,7 +109,7 @@ public class AddRentalController extends AbstractPresenter implements Initializa
 
     /**
      * Update the rental list view with recent rental record data fetched from the
-     * rental model based on the currently selected container.
+     * rental business based on the currently selected container.
      */
     @FXML
     private void updateRentalListView()
@@ -140,7 +138,7 @@ public class AddRentalController extends AbstractPresenter implements Initializa
     }
 
     /**
-     * This method will attempt to create an new rental record in the storage model.
+     * This method will attempt to create an new rental record in the storage business.
      */
     @FXML
     public void rentAContainer()

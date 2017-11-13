@@ -1,6 +1,6 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.rental;
 
-import com.jorisrietveld.containercompany.model.rental.Rental;
+import com.jorisrietveld.containercompany.business.rental.Rental;
 import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -96,7 +96,7 @@ public class RentalOverviewController extends AbstractPresenter implements Initi
     }
 
     /**
-     * Update the rental table view with data fetched from the rental model.
+     * Update the rental table view with data fetched from the rental business.
      */
     private void updateRentalOverviewTable()
     {

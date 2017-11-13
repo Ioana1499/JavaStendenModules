@@ -1,19 +1,7 @@
 package com.jorisrietveld.containercompany.presentation.dashboard;
 
-import com.jorisrietveld.containercompany.model.Repository;
-import com.jorisrietveld.containercompany.model.Storable;
-import com.jorisrietveld.containercompany.model.container.ContainerContract;
-import com.jorisrietveld.containercompany.model.container.ContainerRepository;
-import com.jorisrietveld.containercompany.model.rental.Rental;
-import com.jorisrietveld.containercompany.model.rental.RentalRepository;
-import com.jorisrietveld.containercompany.presentation.dashboard.rental.AddRentalController;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
+import com.jorisrietveld.containercompany.business.container.ContainerRepository;
+import com.jorisrietveld.containercompany.business.rental.RentalRepository;
 
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
@@ -23,12 +11,12 @@ import java.util.function.Predicate;
 public abstract class AbstractPresenter
 {
     /**
-     * The Container model.
+     * The Container business.
      */
     protected ContainerRepository containerRepository = new ContainerRepository();
 
     /**
-     * The Rental model.
+     * The Rental business.
      */
     protected RentalRepository rentalRepository;
 
