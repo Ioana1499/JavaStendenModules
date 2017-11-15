@@ -21,4 +21,11 @@ public class PaperContainer extends Container implements HouseholdWastContainerC
     {
         super( width,length,height);
     }
+
+    @Override
+    public Container set( double width, double length, double height )
+    {
+        super.set( width, length, height );
+        return this;
+    }
 }

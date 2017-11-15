@@ -79,6 +79,13 @@ public abstract class Container implements Storable, ContainerContract
 
     protected Container(){};
 
+    public Container set( double width, double length, double height )
+    {
+        this.width = width;
+        this.length = length;
+        this.height = height;
+        return this;
+    }
     /**
      * Gets the unique identification code of the container.
      *

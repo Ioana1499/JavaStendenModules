@@ -15,28 +15,6 @@ import com.jorisrietveld.containercompany.business.NonPersistingRepository;
 public class ContainerRepository extends NonPersistingRepository<Container> implements ContainerRepositoryContract
 {
     /**
-     * The enum containing all types of containers that are available.
-     */
-    public enum ContainerType{
-        FLAT_RACK("Flat Rack Container"),
-        HALF_HEIGHT("Half Height Container"),
-        NORMAL("Normal Container"),
-        TUNNEL("Tunnel Container");
-
-        private String type;
-
-        ContainerType(String type){
-            this.type = type;
-        }
-
-        @Override
-        public String toString()
-        {
-            return super.toString();
-        }
-    }
-
-    /**
      * Instantiates a new Container business.
      */
     public ContainerRepository( List<Container> containers )

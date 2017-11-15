@@ -2,6 +2,7 @@ package com.jorisrietveld.containercompany.business.Customer;
 
 import com.jorisrietveld.containercompany.business.NonPersistingRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +22,10 @@ public class CustomerRepository extends NonPersistingRepository<Customer> implem
         super( modelList );
     }
 
+    public CustomerRepository()
+    {
+        super( new ArrayList<>());
+    }
     /**
      * Gets all customers with an certain first name.
      *

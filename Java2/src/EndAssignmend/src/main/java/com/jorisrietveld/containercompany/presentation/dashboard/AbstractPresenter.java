@@ -1,5 +1,8 @@
 package com.jorisrietveld.containercompany.presentation.dashboard;
 
+import com.jorisrietveld.containercompany.business.Customer.CustomerFactory;
+import com.jorisrietveld.containercompany.business.Customer.CustomerRepository;
+import com.jorisrietveld.containercompany.business.container.ContainerFactory;
 import com.jorisrietveld.containercompany.business.container.ContainerRepository;
 import com.jorisrietveld.containercompany.business.rental.RentalRepository;
 
@@ -20,17 +23,35 @@ public abstract class AbstractPresenter
      */
     protected RentalRepository rentalRepository;
 
+    protected ContainerFactory containerFactory = new ContainerFactory();
+
+    protected CustomerFactory customerFactory = new CustomerFactory();
+    protected CustomerRepository customerRepository = new CustomerRepository( );
     /**
      * Instantiates a new Base controller.
      */
     protected AbstractPresenter()
     {
-        containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
-        containerRepository.addContainer( ContainerRepository.ContainerType.NORMAL );
-        containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
-        containerRepository.addContainer( ContainerRepository.ContainerType.HALF_HEIGHT );
-        containerRepository.addContainer( ContainerRepository.ContainerType.TUNNEL );
-        containerRepository.addContainer( ContainerRepository.ContainerType.TUNNEL );
+
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                        ContainerFactory.ContainerType.URANIUM_HEXAFLUORIDE ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.BIO ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.NORM_DRAIN ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.DRY_CASK_STORAGE ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.SEWAGE ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.NORM_DRAIN ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.URANIUM_HEXAFLUORIDE ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.SEWAGE ).set( 2, 4.5, 1.5 ));
+        containerRepository.addContainer( this.containerFactory.getContainer(
+                ContainerFactory.ContainerType.NORM_DRAIN ).set( 2, 4.5, 1.5 ));
+
         rentalRepository = new RentalRepository( containerRepository );
     }
 }

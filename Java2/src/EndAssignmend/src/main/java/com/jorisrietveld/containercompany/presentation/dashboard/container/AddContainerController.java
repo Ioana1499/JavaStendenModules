@@ -1,5 +1,7 @@
 package com.jorisrietveld.containercompany.presentation.dashboard.container;
 
+import com.jorisrietveld.containercompany.business.container.Container;
+import com.jorisrietveld.containercompany.business.container.ContainerFactory;
 import com.jorisrietveld.containercompany.business.container.ContainerRepository;
 import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresenter;
 import com.jorisrietveld.containercompany.presentation.util.DialogFactory;
@@ -24,13 +26,13 @@ public class AddContainerController extends AbstractPresenter implements Initial
     /**
      * The Container type observable list.
      */
-    ObservableList<ContainerRepository.ContainerType> containerTypeObservableList;
+    ObservableList<ContainerFactory.ContainerType> containerTypeObservableList;
 
     /**
      * The Container type choice box.
      */
     @FXML
-    ChoiceBox<ContainerRepository.ContainerType> containerTypeChoiceBox;
+    ChoiceBox<ContainerFactory.ContainerType> containerTypeChoiceBox;
 
     /**
      * The Width slider.
@@ -70,7 +72,7 @@ public class AddContainerController extends AbstractPresenter implements Initial
     private void initializeContainerTypeChoiceBox()
     {
         this.containerTypeObservableList = FXCollections.observableArrayList(
-                ContainerRepository.ContainerType.values()
+                ContainerFactory.ContainerType.values()
         );
 
         containerTypeChoiceBox.setItems( this.containerTypeObservableList );
@@ -85,12 +87,15 @@ public class AddContainerController extends AbstractPresenter implements Initial
     {
         try
         {
+            Container container = this.containerFactory.getContainer(
+                    containerTypeChoiceBox.getValue() );
+            /*
             containerRepository.addContainer(
                     containerTypeChoiceBox.getValue(),
                     widthSlider.getValue(),
                     lengthSlider.getValue(),
                     heightSlider.getValue()
-            );
+            );*/
             DialogFactory.createInfoDialog(
                     "Successfully added the Container",
                     "The container is successfully added to the Rental Model.",

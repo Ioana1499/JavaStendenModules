@@ -8,4 +8,7 @@ import com.jorisrietveld.containercompany.presentation.dashboard.AbstractPresent
  */
 public class SettingsController extends AbstractPresenter
 {
+    public SettingsController()
+    {
+    }
 }
