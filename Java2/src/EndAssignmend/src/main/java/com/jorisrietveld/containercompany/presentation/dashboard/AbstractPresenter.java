@@ -1,5 +1,6 @@
 package com.jorisrietveld.containercompany.presentation.dashboard;
 
+import com.jorisrietveld.containercompany.business.container.ContainerFactory;
 import com.jorisrietveld.containercompany.business.container.ContainerRepository;
 import com.jorisrietveld.containercompany.business.rental.RentalRepository;
 
@@ -15,6 +16,8 @@ public abstract class AbstractPresenter
      */
     protected ContainerRepository containerRepository = new ContainerRepository();
 
+    protected ContainerFactory containerFactory = new ContainerFactory();
+
     /**
      * The Rental business.
      */
@@ -25,6 +28,9 @@ public abstract class AbstractPresenter
      */
     protected AbstractPresenter()
     {
+        containerRepository.addContainer(
+                this.containerFactory.getContainer( ContainerFactory.ContainerType.DRY_CASK_STORAGE ).
+        )
         containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );
         containerRepository.addContainer( ContainerRepository.ContainerType.NORMAL );
         containerRepository.addContainer( ContainerRepository.ContainerType.FLAT_RACK );

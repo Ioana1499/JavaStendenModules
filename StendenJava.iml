@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_9" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter5" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter6" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter7" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/Chapter8" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/Tutorial" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmend/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmendRemake/src/main" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java2/src/EndAssignmendRemake/src/test" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/Java1" />
+      <sourceFolder url="file://$MODULE_DIR$/Java3/src/EndAssignment/RadioTuner/src/main" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="9" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="JUnit4">
