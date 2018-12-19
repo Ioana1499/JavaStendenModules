@@ -1,3 +1,3 @@
-# Java End Assignment :: Taxy Company
+# Java End Assignment :: Taxi Company
 
 

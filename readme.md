@@ -2,6 +2,9 @@
 This repository contains the source code of my assignment solutions for the modules Java1, Java2 and Java3 from
 Stenden University of applied science.
 
+**Only for students: Because I heared that work has been copied in the past:**
+### :bangbang: <span style="color:red;">Your free to use this as an example, but committing plagiarism is a waste of your school fees and a violation of the GPLv3 Licence!</span>
+
 ## Module Java1
 This module is given at Stenden University of applied science in the third block of the first year. This module
 is an introduction into object oriented programming in the Java language. The goal of this module is to get an general
