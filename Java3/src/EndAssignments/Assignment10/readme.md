@@ -23,7 +23,8 @@ At an all-round skating championship the following distances are skated in
 succession: 500 metres, 5000 metres, 1500 metres and 10000 metres. Each time is
 accurately registered in hundredths of seconds. The times achieved on the
 various distances are converted to points by converting each time to a 500
-metres time. The skater with the lowest total number of points may call himself champion.
+metres time. The skater with the lowest total number of points may call himself
+champion.
 
 An Applet or GUI must be developed for which the following information can be
 entered for an unknown number of participants (max. 24):
@@ -46,29 +47,30 @@ must be displayed.
 
 
 ## User Stories & Constraints
-- As a person I want to see the results of races.
-- As a person I want to see the results of the championship.
+1. As a person I want to see the results of races.
+2. As a person I want to see the results of the championship.
 
-- As a participant I want to see the results of the race I skated.
-- As a participant I want to see myself in the leader board of the competition
-  class I raced in.
-- As a participant I want to see the results of the all competitions in the
-  championship.
-- 
-- As a championship employee I want to be able to open the application so I can
+3. As a participant I want to see the results of the race I skated.
+4. As a participant I want to see myself in the leader board of the competition I
+  raced in.
+
+5. As a ISU employee I want to be able to open the application so I can
   perform the job I have at the championship.
-- As a championship employee  I want to have access to a list of all the championships.
-- As a championship employee  I want to have access to a list of all the competitions in the
-  championship.
-- As a championship employee  I want to have access to a list of all the races in a
+6. As a ISU employee I want to have access to a list of all the championships.
+7. As a ISU employee I want to have access to a list of all the races in a
   competition class.
 
-- As a referee I want to register finished participants in a competition.
-- As a referee I want to disqualify participators when they perform a Illegal
-  action.
+8. As a referee of a race I want to persist the finish time of participants in
+   the following format: `mmsshh`.
+9. As a referee I want to disqualify participators when they perform a Illegal
+   action.
 
 
 ## Input & Output
+
+| Input Code |    |
+|:-----------|:---|
+|            |    |
 
 ## UML Diagrams
 
